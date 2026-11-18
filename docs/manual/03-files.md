@@ -7,7 +7,14 @@ The banner's Dataset picker chooses the active one.
 
 The **Files** group in the side bar lists the open datasets.
 A dataset of several files shows them under its arrow, and the active dataset is marked.
-Click a dataset to switch to it.
+Click a dataset to switch to it: it becomes the active dataset, named in the banner, and the pages show it.
+
+## Selecting several
+
+- **Ctrl+click** adds a dataset to the selection or takes it out; **Shift+click** adds every dataset between the last one picked and this one.
+- **Select**, next to the filter box, shows a tick box on every dataset, to pick several without the keyboard; **Done** hides them.
+- With two or more selected, a bar above the list offers **Compare** and **Merge into one dataset**; **…** adds **Group them**, **Close** and **Clear the selection**, and so does a right click on any selected dataset.
+- Compare takes the selection as its entries, in the order they were picked.
 
 Under each name is a short details line: parts (`1.4K` is about 1,400), lot, CMOD, program and test step.
 The narrower the side bar, the fewer of them it shows; parts and lot always stay.
@@ -33,7 +40,9 @@ Right-click a group to fold, rename, merge, build its lot result, ungroup or clo
 
 ## Lot results
 
-A group whose files are runs of one lot, test step, flow and program, each with CMOD T, C, F or R, gets one more dataset at its top, marked **LOT**: the lot's final result, built by its recipe.
+The runs of a group that share the fields of Settings, Lot recipe (lot, test step, flow and program by default), each with CMOD T, C, F or R, get one more dataset at the group's top, marked **LOT**: the lot's final result, built by its recipe.
+A group holding runs of two steps gets one lot result for each.
+Engineering runs (MODE_COD E) are left out.
 
 - Pass 1 is the first run (T) with its continuations (C); each retest of rejects (F) starts the next pass; a 100% retest (R) starts the count over.
 - Every good part of every pass is kept.

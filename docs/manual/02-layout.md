@@ -25,7 +25,7 @@ Settings, Experimental features, picks which pages it takes along.
 
 The banner names the page and its open tab, and holds what every page uses:
 
-- **Dataset**: the files the pages work on. The pencil button renames it.
+- The **active dataset**, the one the pages work on. It is picked in Files; click its name to show it there. The pencil button renames it.
 - **Parts**: all parts, or good parts only.
 - **Filter**: the part filter (see [Part filter](05-filters.md)). Apply or press Enter to use it; Clear removes it.
 - **Search** (Ctrl+K).
@@ -63,10 +63,34 @@ Hover, focus or click a chip for system figures and app storage.
 A chip turns amber when the PC's free share of that resource falls under its limit (5% by default, set in Settings, Charts and status bar).
 Resource counters work on Windows; other systems show `n/a`.
 
+## Chart options
+
+Pages with charts have a bar of options above them; every chart follows, and the choices are kept.
+
+- **Axis range**: within the limits, the results, or both.
+- **Histogram**: % of each group or counts.
+- **Opacity** of bars and points.
+- **Lines** between the points of a chart of parts (a trend, a scatter, a trajectory): **as drawn**, **show** or **hide**, with their width and opacity.
+
+## Chart cards
+
+On Test explorer and Compare each chart is a card with a small header:
+
+- its **type menu**, to show the same data another way (a histogram as a box plot, a CDF or a trend, say), at once and without a new calculation;
+- **Expand** (⤢), so the chart fills the page; Escape or the button again puts it back;
+- **More** (⋯, or a right click on the header): collapse the card to its title, copy the chart as an image, save it as PNG, or reset the zoom.
+
+The type and the collapsed state of each card are kept for that page. More pages follow.
+
+Above each histogram: its bin-size slider, **2D** or **3D** (3D by default, for every histogram at once), and in 3D the **Depth**, how far each layer stands behind the one before it (0 puts them in one plane).
+Other charts are always 2D.
+
+The resource monitor at the right of the status bar opens a small window with a card per resource: a bar of this app's share and the whole PC's, a mark at the low limit, and a sparkline of the last two minutes.
+
 ## Right-click menus
 
 A right click anywhere offers: open files, switch dataset, go to any page or tab, search, refresh, the side bar and panel switches, light or dark, and the theme.
-On a chart it adds **Reset zoom** and **Save chart as PNG**.
+On a chart it adds **Reset zoom**, **Save chart as PNG** and **Copy chart as image** (also a button in the chart's toolbar), ready to paste into a mail, a chat or a slide.
 Files, groups and Chipper have menus of their own.
 
 Shift + right click, or a right click in a text field or on selected text, keeps the browser's own menu.

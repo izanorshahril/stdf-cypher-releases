@@ -7,7 +7,7 @@ The filter in the banner applies to every page and export, and the status bar sh
 
 | What | Example |
 |---|---|
-| Fields | `part_id file head site x y xy hbin sbin pass fail wafer lot sublot num_test test_t part_txt index retest alarm inst_alarm first_fail n_fails loadboard site_loadboard` |
+| Fields | `part_id file head site x y xy hbin sbin pass fail wafer lot sublot num_test test_t part_txt index retest alarm inst_alarm first_fail n_fails loadboard site_loadboard odd even` |
 | Test values | `t[1000]` (test number), `t["VDD_LEAK"]` (name), `t["1000:VDD_LEAK"]` (key) |
 | Comparison | `=  ==  !=  <  <=  >  >=` |
 | Sets and ranges | `hbin in (2, 5..9)`, `site not in (3)`, `t[1000] between 0.1 and 0.4` |
@@ -17,6 +17,8 @@ The filter in the banner applies to every page and export, and the status bar sh
 | Flags | bare `pass`, `fail`, `retest`, `alarm` (a test with the TEST_FLG alarm bit), `inst_alarm` (an instrument alarm in a GDR or DTR) |
 | Failed tests | `fail(1013)`, `fail(1013, 1020)`, `first_fail = 1013`, `fail(1013) and n_fails = 1` |
 | Part sets | `$match`, `not $match and pass` (sets made by Match parts, Bad candidates and the other pages) |
+| Tests of a part | `first_try` (the first test of each part, retests left out), `last_try` (its last test), found as the retest option on Home finds them |
+| Order | `odd` (the 1st, 3rd, 5th... part), `even` (the 2nd, 4th...) |
 
 A test fails when its TEST_FLG fail bit is set or its value is outside the limits.
 
@@ -31,6 +33,7 @@ A test fails when its TEST_FLG fail bit is set or its value is outside the limit
 | `part_id in (1..100)` | part IDs 1 to 100 |
 | `loadboard = 2` | parts tested on loadboard 2 |
 | `$bad_candidate` | the bad candidates found on Bad candidates |
+| `last_try and pass` | good parts, each part's last test only |
 
 ## Tips
 

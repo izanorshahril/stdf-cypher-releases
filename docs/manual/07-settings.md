@@ -10,6 +10,18 @@ The `--threads` option and the `STDF_CYPHER_THREADS` variable set the same thing
 
 **Build the lot result of a file group that follows the recipe** (on by default) adds a group's lot result by itself (see [Files and datasets](03-files.md#lot-results)).
 
+## Lot recipe
+
+The MIR fields runs must share to belong to one lot: lot, step, flow and program by default.
+Lot summary puts such runs in one table, and a Files group gets one lot result for them.
+A site that keeps the step's name in OPER_FRQ can match by lot, program and step name instead.
+Engineering runs (MODE_COD E) are left out either way.
+A change builds the lot results again.
+
+## Field names
+
+What the MIR fields are called in Lot summary, the lot recipe and Lot details: type a name beside the MIR's own (OPER_FRQ, ENG_ID, ...), or leave it empty for the app's.
+
 ## Part identification
 
 One ordered list of the ways to find a part:

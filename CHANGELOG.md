@@ -2,6 +2,33 @@
 
 Each release, newest first. Downloads are on the [releases page](https://github.com/izanorshahril/stdf-cypher-releases/releases).
 
+## v0.4.1: Compare, marks and lot recipe (2026-11-18)
+
+### Added
+- **Compare for many**: Compare takes two to eight files or groups (a file with a filter, such as site = 3) and puts every test side by side against the first one: each one's mean, spread and fail rate, how far it moved, and a PARTIAL flag when a file lacks the test. The former Compare is now **Marker search** under Investigate.
+- **Files selection**: Ctrl+click, Shift+click or **Select** picks several datasets; right-click the selection to compare, merge, group or close it. The banner names the active dataset instead of a picker.
+- **Kill & catch** (Investigate, experimental): follows the parts a test killed in a later run back to an earlier run by wafer, X, Y or part text, and ranks the earlier tests that could have caught them, with the best one charted beside the kill test. When too few parts link, or no test stands out, the page says so.
+- **Chart cards** in Test explorer and Compare: each chart has a type menu, **Expand** to fill the page (Escape restores it) and **More** (collapse, copy, save as PNG, reset zoom, copy the test's number or name).
+- **Copy charts as images** to the clipboard, from the chart toolbar or a card's menu.
+- **Lines between points** on trend and trajectory charts, with their width and opacity.
+- **Filter by** in Test explorer: good or bad parts, some hard or soft bins (or all but them), some sites, some part IDs (or all but them), the first or the last test of each part, odd or even parts, parts inside or outside the shown test's limits, or a filter of your own, on top of the banner's filter. The filter language gains `first_try`, `last_try`, `odd` and `even`.
+- **Marked parts** in Test explorer: right-click a trend or scatter point to mark its part. It is crossed on every chart of the test, and in every other open file it is in (found by wafer, X, Y and part text), until you unmark it. Statistics lists the marks with Undo, Find in files and Clear all.
+- **Copy a test's number or name** from any test table (right-click a row) and from chart cards.
+- **Lot recipe** (Settings): pick the MIR fields runs must share to be one lot, for example lot, program and the step name in OPER_FRQ. Lot summary and lot results follow it, and a Files group gets one lot result per set of matching runs.
+- **Field names** (Settings): rename the MIR fields shown in Lot summary, the lot recipe and Lot details.
+- **Lot summary columns**: pick the MIR fields beside each run, now including the step name (OPER_FRQ) and the engineering ID.
+
+### Changed
+- **Engineering runs** (MODE_COD E) are left out of Lot summary's final result and of lot results unless you change their row.
+- **Test explorer**: Layers by is now **Compare by**. The test you pick follows you to other files that have it.
+- **3D** is for histograms only and is the default; the 2D/3D switch and a depth slider sit on each histogram.
+- **Resource monitor**: its window shows a card per resource with a usage bar and the last two minutes.
+- **Investigate pages** are marked experimental.
+- **Chipper** (experimental) wears pixel sunglasses, a handlebar moustache and a chin beard.
+
+### Fixed
+- 3D line charts failed to draw, and three-digit colours were misread.
+
 ## v0.4.0: Fantastic (2026-11-18)
 
 Codename **Fantastic**. A beta for early users; free for everyone.

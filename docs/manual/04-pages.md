@@ -33,11 +33,14 @@ Every page that uses one shows its value with a link back here.
 
 ### Lot summary
 
-Every opened file as one run of its lot and test step, in test order: mode, CMOD, tester, program, start and finish, good, bad, total and yield, the yield of each site and the parts in each hard or soft bin.
+Every opened file as one run of its lot, in test order: good, bad, total and yield, the yield of each site and the parts in each hard or soft bin.
+**Columns** picks the MIR fields shown beside them (mode, CMOD, step name, engineering ID, tester, station, program, rev, start and finish by default); Settings, Field names renames them.
 
 - The last row of a lot is its final result after the retests, with the first-pass yield.
 - Runs are put in passes: pass 1 is the first run with its continuations, each retest of rejects starts the next pass, and a 100% retest starts the count over.
 - What a run is to the lot comes from its CMOD code (T first run, C continuation, F retest of rejects, R 100% retest) or, without one, from RTST_COD. It can be changed per row.
+- An engineering run (MODE_COD E) is left out unless you change its row.
+- Runs belong to one lot when they share the fields of Settings, Lot recipe: lot, step, flow and program by default.
 - A bad part in a bin listed under **Bins not retested** (`H2|H5|S206`) is a final bad part from whichever pass.
 
 Parts are counted, not matched between files (Trace matches them), and the part filter does not apply.
@@ -55,12 +58,28 @@ Instrument alarms and the datalog records (GDR, DTR) are listed with their parts
 The tests on the left, the charts of one test in the middle and the statistics of each layer on the right.
 
 - The Cpk column is shaded by the Cpk rule (see [Look and themes](06-look.md#shaded-cells-and-rules)); failing tests are red.
-- The charts are the histogram, trend, box plot and normal probability plot together, or one of them (or the CDF) large.
-- Layers are sites by default, or good and bad, bin, wafer, file or loadboard. A layer's tick shows or hides it.
+- Four chart cards: histogram, trend, box plot and normal probability plot. Each card's type menu switches it to any of these or the CDF; **Expand** fills the page with one.
+- **Compare by** splits the parts into layers: sites by default, or good and bad, bin, wafer, file or loadboard. A layer's tick shows or hides it.
+- **Filter by** keeps some parts, on top of the banner's filter: good or bad parts, some hard or soft bins (or all but them), some sites, some part IDs (or all but them), the first or the last test of each part, odd or even parts, parts inside or outside the limits of the test shown, or a filter of your own. The test list follows it, except inside and outside, which change only the charts.
 - A second test adds a scatter.
 - Every histogram has a bin-size slider.
+- Right-click a test in the list, or the test's name in Statistics, to copy its number, its name or both. A chart card's **More** menu copies them too.
+
+#### Marked parts
+
+Right-click a point of the trend or the scatter and choose **Mark this part**.
+The part is crossed and labelled on every chart of the test, and it stays marked when you pick another test or switch to another file.
+A mark keeps the part's wafer, X, Y and part text (Settings, Part identification), so it finds the same physical part in the other files, its retests too; a row must agree on every one of those IDs both files have.
+A part with neither stays marked in its own file only.
+
+Statistics lists the marked parts with how many this chart shows.
+**Find in files** lists the open files the parts are in and opens one, **Undo** takes back the last change, and **Clear all** unmarks every part.
+Right-click a cross to unmark that part, copy its ID or find it in the other files.
+Marks last until the app closes.
 
 A chart of a test opens on the test most parts fail.
+The test you pick stays when you switch to another file: the same test number and name, or the same number.
+When that file does not have it, the page says so and shows no test, and the test comes back when you switch to a file that has it.
 
 ### Wafer maps
 
@@ -88,12 +107,15 @@ STDF does not number touchdowns, so they are estimated.
 
 ### Compare
 
-File A against file B, or a group against the rest within the current filter.
-It shows a volcano plot, bin deltas and a table of every test: mean and median shift in sigma and in % of the limit range, sigma ratio, Welch t-test, Kolmogorov-Smirnov and Benjamini-Hochberg q-values, with a SHIFT or SPREAD flag.
-Click a test for overlaid histograms, CDF and box plots.
+Two or more files or groups side by side, every test against the first one, the reference.
 
-**Marker candidates**, at the top, ranks every test by how well it separates group B from reference A.
-Tick the **Score methods** that count; the ranking follows at once without running again.
+- The entries are the datasets selected in Files (Ctrl+click, Shift+click or **Select**), or **Compare** in the selection's right-click menu. **+ Add** adds a dataset, or a group: a file with a filter such as `site = 3`.
+- The entries show as chips A, B, C… in order. Drag a chip to reorder; ★ makes it the reference, ⚲ sets its filter, × removes it. Up to eight entries.
+- The yield and parts of each entry, and the table of tests: each entry's mean and fail %, each other entry's shift from the reference in sigma, and a SHIFT or SPREAD flag (the worst over all entries). The table is sorted by how far a test moved; click a test for every entry's histogram, CDF and box plot.
+- The share of each hard bin in every entry.
+
+The part filter in the banner applies to every entry, together with the entry's own filter.
+Ranking marker tests, group against the rest and drift are on [Marker search](#marker-search).
 
 ### Trace
 
@@ -113,6 +135,27 @@ The **ID audit** lists parts whose IDs disagree, and the workbook has an ID audi
 **Find a part**, on this page, looks one part up by any ID.
 
 ## Investigate
+
+The pages of Investigate are experimental for now: they are under the **Experimental** switch until they are checked on more real files.
+
+### Marker search
+
+Which tests set one population apart from another: file A against file B, or a group of parts against the rest of one file (optionally with drift against a second file of the same units).
+**Marker candidates** ranks every test by several signals at once: separation, tails, PAT, ANOVA, drift, correlation break and a random forest. Tick the **Score methods** that count; the ranking follows at once without running again.
+Below it: box plots of the top tests, a volcano plot, bin deltas and the full two-way table (mean and median shift in sigma and in % of the limit range, sigma ratio, Welch t-test, Kolmogorov-Smirnov and Benjamini-Hochberg q-values).
+
+### Kill & catch
+
+Parts that fail a test in a later run (killed), traced back to an earlier run of the same parts: which earlier test could have caught them?
+
+- **Runs**: the earlier run (catch) and the later run (kill). They start from the Files selection, the first one picked as the earlier run; ⇄ swaps them.
+- **Left**: the later run's tests, the most failed first, and the chart of the kill test, killed parts against the others. The page opens on the test most parts fail; click another test to change it.
+- **Right**: the earlier run's tests, ranked by how well they set the killed parts apart from the other parts that link to both runs (rank AUC, the shift in robust sigma, the share beyond 3 sigma, and how many already failed). The best one is shown on the chart, the killed parts' earlier values against the others'; click another test to see it.
+- Parts are linked by the ID of **Part identification** (Settings) that links the most parts, of those that name one physical part in every file: wafer, X, Y from tests and part text (part IDs and X/Y restart in every file, so they do not link runs).
+- When too few killed parts can be linked, for example because they failed in the later run before the tests that hold their ID, the ranking is a **guess**: the earlier tests that flag about as many parts (failed, alarm, or beyond 4 robust sigma) as were killed. The page says so.
+- When no test separates the parts, or none flags about as many, a warning says why and the right side stays as it was.
+
+The part filter in the banner applies to both runs.
 
 ### Drift report
 
