@@ -2,6 +2,32 @@
 
 Each release, newest first. Downloads are on the [releases page](https://github.com/izanorshahril/stdf-cypher-releases/releases).
 
+## v0.4.2: Compare, Part Trace and panes (2026-11-18)
+
+### Added
+- **Chart settings** on every chart card in Test explorer and Compare: bin size, 2D or 3D and depth, lines, opacity and axis range, in one button on the chart.
+- **Enter opens a test**: type a test number or name in the test search and press Enter; with no exact match the nearest test opens.
+- **Resizable panes**: drag the edge of the test list or the statistics, or minimize either to a strip.
+- **Part jumps**: right-click a part on Test explorer, Compare, Part Trace or Part trail and choose **Show this part in** to open it on another page, marked.
+- **Part Trace filters**: a filter per run (pass, fail, not tested or a hard bin), for example only the rejects of Run 2.
+- **Add to compare** on a file's right-click menu.
+- **Files grouping**: a file opened on its own joins the group of its lot ID, or of the file it shares the most part texts with; a merge makes a group of the merged dataset and its files.
+- **Hard bins picker** in Lot summary for the bins not retested.
+- **Check for a new version** (Settings, Updates): when you click Check now, or once a day by itself. Off by default; only the public releases page is asked.
+
+### Changed
+- **Compare** sits under Test explorer and works like it: tests on the left, one test's four charts with a layer per file or group, and the files or groups listed down the right with their statistics. With two Files groups or more it compares the groups, otherwise every file; a choice in Files takes over until **Back to automatic**.
+- **Part Trace** (was Trace) traces the files Compare compares. The parts table has a column per run (Run 1, Run 2... with the file on hover) showing the hard bin; the failing tests are on hover and in the right-click menu.
+- **Banner**: only the page title and, read only, the dataset, the parts and the filter. The part filter, the parts choice, Search and Help are at the top of the side panel, with icons when it is collapsed. Rename a dataset from its right-click menu.
+- **Kill & catch**: the earlier run is the kill run and the later run the catch run; they start on the earliest and the latest file by test time.
+- **Experimental**: Correlation, ANOVA, Abnormal parts, Machine learning and Marker search moved there.
+- **Lot summary**: colour grades only pass 1 and the final result; later passes are faded and runs left out are grey. Bins not retested default to H2, H5 and H6.
+- **Lines** between points are Show or Hide; until you pick, a trajectory has them and a trend does not.
+- **Expand** fills the space between the test list and the statistics, and stays expanded when you pick another test.
+
+### Fixed
+- Chart cards overlapped after switching 2D and 3D, or lines on and off.
+
 ## v0.4.1: Compare, marks and lot recipe (2026-11-18)
 
 ### Added

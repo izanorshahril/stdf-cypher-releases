@@ -1,7 +1,7 @@
 # Part filter
 
-One expression language picks parts everywhere: in the banner's filter box, on pages that take a filter, and in the `-f` option of the commands.
-The filter in the banner applies to every page and export, and the status bar shows it.
+One expression language picks parts everywhere: in the filter box of the side panel, on pages that take a filter, and in the `-f` option of the commands.
+That filter applies to every page and export; the banner and the status bar show it.
 
 ## Syntax
 

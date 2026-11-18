@@ -1,7 +1,7 @@
 # Files and datasets
 
 A **dataset** is what the pages work on: one STDF file, or several files combined.
-The banner's Dataset picker chooses the active one.
+Files chooses the active one; the banner names it.
 
 ## Files pane
 
@@ -28,6 +28,10 @@ In the shrunk side bar, the Files icon opens the pane in a flyout.
 
 Datasets from the same folder form a group named after the folder; a dataset alone is listed on its own.
 Dropping several folders on the window groups each folder's files.
+A file opened on its own, from another folder or dragged in later, joins the group of the open files of its lot ID; without a lot ID in common, the group of the file it shares the most part texts with.
+Files of one lot that are each on their own form a group named after the lot.
+A file you placed or took out by hand stays where you put it.
+**Merge into one dataset** makes a group of the merged dataset, listed first, and the files it was made of; no lot result is built for that group.
 
 - Drag a dataset onto another to group the two.
 - Drag a dataset onto a group to add it.
@@ -35,7 +39,7 @@ Dropping several folders on the window groups each folder's files.
 
 Groups are labels in the app only: no file is moved, copied or renamed.
 
-Right-click a dataset to switch to it, open it on a page, compare it, rename it, edit its lot details, move it to a group, show it in its folder or close it.
+Right-click a dataset to switch to it, open it on a page, compare it or add it to Compare, rename it, edit its lot details, move it to a group, show it in its folder or close it.
 Right-click a group to fold, rename, merge, build its lot result, ungroup or close it.
 
 ## Lot results
@@ -74,7 +78,7 @@ See [Pages](04-pages.md#merge-split--export).
 ## Order of opened files
 
 **Order of opened files** on Home sorts files by test start time (the default) or by file name.
-This sets the run order on Trace.
+This sets the run order on Part Trace.
 
 ## Renaming
 

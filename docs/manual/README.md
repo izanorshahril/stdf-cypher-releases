@@ -3,7 +3,7 @@
 STDF Cypher reads STDF v4 test data and shows it in a desktop app, a local dashboard or a self-contained HTML report.
 Everything runs on your PC and the app sends your data nowhere.
 
-This manual is also in the app: press F1, click **?** in the banner, or open **Help** at the bottom of the side bar.
+This manual is also in the app: press F1, click **Help** at the top of the side panel, or open **Help** at the bottom of the side bar.
 
 ## Contents
 

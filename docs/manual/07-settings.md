@@ -82,10 +82,17 @@ Which experimental pages and themes the **Experimental** box in the side bar tak
 
 Theme, mode, type, accent, effects, chart colours, gradients and shaded cells (see [Look and themes](06-look.md)).
 
+## Updates
+
+**Check for a new version**: only when you click **Check now** (the default), or automatically, once a day when the app starts.
+The check reads the latest release of the public releases page and nothing else; nothing about this PC or its files is sent.
+When a newer version is out, a message says so with a button to the download page.
+Offline, an automatic check stays silent; **Check now** says it could not reach the page.
+
 ## Charts and status bar
 
 - **Axis range** of charts: within limits, results, or both (adaptive).
-- **Histogram**: the default histogram scale. Each histogram also has its own bin-size slider.
+- **Histogram**: the default histogram scale. Each chart card has its own settings button with the bin size, and on pages without cards each histogram has a bin-size slider.
 - **Show resource monitor in the status bar**. Hiding it also stops its sampling.
 - **Warn when free falls under**: the low limit for CPU, memory, GPU and disk (5% by default).
 

@@ -41,7 +41,7 @@ You can make more with `stdf-cypher synthetic-sample` (see [Command line](08-com
 1. Open a file. Home lists it under **Open datasets** and offers **Next steps**.
 2. Open **Lot summary** for the runs and yields, or **Overview** for bins and fail pareto.
 3. Click a test in the fail pareto to open it in **Test explorer**.
-4. Type a part filter in the banner, such as `site in (1,2)`, and every page follows it.
+4. Type a part filter at the top of the side panel, such as `site in (1,2)`, and every page follows it.
 
 ## Several windows
 
