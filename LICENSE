@@ -1,0 +1,51 @@
+STDF Cypher Freeware Licence
+Version 1.0, November 2026
+
+Copyright (c) 2026 izanorshahril. All rights reserved.
+
+This licence covers STDF Cypher 0.4.0 and later: the program, its manual and the other
+files in its release archive ("the Software"). Versions 0.3.22 and earlier were released
+under the MIT License and stay under it.
+
+1. Free use
+   You may install and use the Software free of charge, for any purpose, including
+   commercial and production use, on any number of computers.
+
+2. Sharing
+   You may copy and share the Software's official release archives with others, as long as
+   you share them unchanged, with this licence included, and free of charge. You may not
+   sell the Software, charge for it, or bundle it with something you sell.
+
+3. Restrictions
+   You may not modify, translate, reverse engineer, decompile or disassemble the Software,
+   except where the law expressly allows it despite this restriction. You may not remove or
+   change the copyright notices, this licence or the third-party notices.
+
+4. Third-party components
+   The Software includes open-source components, each under its own licence, listed in
+   THIRD-PARTY-NOTICES.md. Nothing in this licence limits the rights those licences give
+   you for those components.
+
+5. Your data
+   The Software runs on your computer and does not send your data anywhere by itself. The
+   desktop app answers only this computer. If you start it with "serve --host <address>",
+   anyone who can reach that address on your network can open the dashboard and the data
+   it shows, without a password. You are responsible for the data you open with the
+   Software, for your right to use that data, and for who you let reach it.
+
+6. No warranty
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+   PURPOSE AND NON-INFRINGEMENT. Results from the Software, such as yields, bins, statistics,
+   limits and exported files, may be wrong. Check them before you rely on them for
+   decisions about products, lots, test programs or equipment.
+
+7. Limitation of liability
+   IN NO EVENT SHALL THE AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE, INCLUDING LOST
+   PRODUCT, YIELD, DATA, TIME OR PROFIT.
+
+8. End
+   This licence ends automatically if you break its terms. You must then stop using the
+   Software and delete your copies.
