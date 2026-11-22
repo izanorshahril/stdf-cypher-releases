@@ -5,29 +5,28 @@ The half-circle button switches light and dark for every theme.
 
 ## Themes
 
-| Theme | Look |
-|---|---|
-| Workaholic | Navy, sky blue and yellow. The theme on first start. |
-| Struggling | Burgundy and magenta. |
+| Theme | Look | Starts in |
+|---|---|---|
+| Workaholic | Navy, sky blue and yellow. The theme on first start. | light, blue accent |
+| Struggling | Burgundy and magenta. | light, pink accent |
+| CyberGeek (experimental) | Dot matrix, neon and glow; bars filled with dots and dotted lines. | dark, green accent |
+| RetroNerd | Pastel pop, ink outlines and hard 8-bit shadows. | light |
+| ProMaxUltra | Frosted glass, metal edges and gloss. | dark |
+| NoirCyreel | Black, white and greys. | dark |
+| GemilangAuAgPd (experimental) | Gold, silver and palladium, with metal edges. | dark |
+| Industry (legacy) | Steel blue and charcoal. | dark |
+| Chillax (legacy) | Neutral greys and blue. | light |
 
-With experimental features on there are six more:
-
-| Theme | Look |
-|---|---|
-| Chill | Neutral greys and blue. |
-| Industry | Steel blue and charcoal. |
-| Cybergeek | Dot matrix, neon and glow; opens in dark. |
-| Classy | Frosted glass, metal edges and gloss. |
-| Retronerd | Pastel pop, ink outlines and hard 8-bit shadows. |
-| Noir | Black, white and greys. |
-
+Each theme keeps its own light or dark mode and accent: change them while a theme is on, and the theme comes back that way.
+**Reset this theme's colours** (right-click, Theme) puts back the mode and accent it starts in.
+Legacy themes may be removed in a later version.
 Switching experimental features off shows Workaholic until they come back on; your choice is kept.
 
 ## Look settings
 
 Settings, Look changes any part of the theme.
 Whatever you leave alone follows the theme, and every page changes at once.
-**Reset the look to the theme's** goes back to the theme's own look.
+**Reset the look to the theme's** goes back to the theme's own look, mode and accent.
 
 ### Type
 
@@ -35,7 +34,7 @@ The text and the headings (page titles, the banner and big numbers) each take on
 
 - a Nerd font (the default, when one is installed on the PC);
 - Cypher Sans, the system UI font, used when no Nerd font is installed;
-- Cypher Dot, the app's own dot-matrix font, the headings of Cybergeek;
+- Cypher Dot, the app's own dot-matrix font, the headings of CyberGeek;
 - Cascadia Mono.
 
 ### Accent
@@ -75,4 +74,4 @@ A cell past a threshold pops in the fail or warning colour.
 | Rule colours only | Only cells past a threshold are coloured; the rest stay plain. |
 | Off | No shading. |
 
-Test explorer's Cpk column, the Overview's fail pareto and bin tables, the Site map's values, the Lot summary's yields and fail-bin shares, and the Drift report's defaults use these rules.
+Test Explorer's Cpk column, the Overview's fail pareto and bin tables, the Site Map's values, the Lot Summary's yields and fail-bin shares, and the Drift Report's defaults use these rules.

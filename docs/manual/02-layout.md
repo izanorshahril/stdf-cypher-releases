@@ -5,9 +5,12 @@ The banner only names the page and what it shows; the controls are in the side b
 
 ## Side bar
 
-The side bar lists the pages in groups: Explore, Investigate, Data & files and Experimental.
+The side bar lists the pages in groups: Explore, Investigate, Data and Experimental.
 Click a group heading to fold or unfold it; the app remembers each group.
-Home is at the top, and Help and Settings are at the bottom.
+Home is at the top, with the version on the same line: click the version to check for a new one. It shines with a dot while a newer version is out.
+The **?** button at the top right opens this manual at the page you are on (F1 does the same).
+Settings is at the bottom.
+**Open** under them opens STDF files; right-click it to open a whole folder, or drop files and folders anywhere on the window.
 
 The arrow at the bottom shrinks the side bar to one icon per group.
 Hover or click a group icon to open its pages in a flyout; the arrow keys and Escape also work there.
@@ -26,17 +29,18 @@ Settings, Experimental features, picks which pages it takes along.
 
 The banner names the page and its open tab, and shows what the page uses, without controls of its own:
 
-- the **active dataset**, the one the pages work on. It is picked in Files; click its name to show it there, and rename it from its right-click menu;
+- the **active dataset**, the one the pages work on. It is picked in File; click its name to show it there, and rename it from its right-click menu;
 - the **parts**: all parts, or good parts only;
-- the **part filter**, when there is one. Click it to edit it in the side panel.
+- the **part filter**, when a page set one (**Use as filter**, **Filter to these**). Click it to clear it.
 
 ## Search
 
 Ctrl+K, or **Search** at the top of the side panel (the magnifier on its rail), finds:
 
 - pages and tabs;
-- tests of the dataset, with their Cpk (a test opens in Test explorer);
+- tests of the dataset, with their Cpk (a test opens in Test Explorer);
 - recent filters, to apply again;
+- Chipper's facts about the data in scope, when experimental features are on;
 - actions, such as switching light and dark or hiding the side panel;
 - sections of this manual.
 
@@ -44,19 +48,17 @@ Use the arrow keys and Enter, or click a result.
 
 ## Side panel
 
-The side panel on the right starts with what every page uses:
+The side panel on the right starts with **Search** (Ctrl+K), the one search over pages, tests, actions, the manual and Chipper's facts.
+The part filter is out of the side panel for now: a filter set by a page shows in the banner, where a click clears it.
 
-- **Search** (Ctrl+K) and **Help**, which opens this manual at the page you are on (F1 does the same);
-- **Parts**: all parts, or good parts only;
-- **Part filter** (see [Part filter](05-filters.md)): Apply, or press Enter, to use it; Shift+Enter starts a new line; Clear removes it.
+Under the search are small widgets:
 
-Under them are small widgets:
+- **Chipper** (experimental): a helper that shows facts about the data, tips about the app and sections of this manual (**Read more** opens them).
+  With no files open, Chipper says how to open some, with **Open files** and **Open a folder**.
+  Urgent messages come first, marked **CHECK THIS**: a resource under its limit, and wafer, X, Y settings that look wrong for the open data (most parts missing them, empty placeholder values, many parts on few die positions, or a WXY test that disagrees), with a button to Settings.
+- **Insight**: ranked facts about the parts in scope, each from a fixed rule with its number: yield, top fail bin, most frequent first fail, a site or wafer at least 2 points under the rest, and tests under the Cpk warning threshold. Each has a button to the page that shows more and, where it fits, **Filter to these**.
 
-- **Chipper** (experimental): a helper that shows facts about the data, tips about the app and sections of this manual (**Read more** opens them), and answers a typed question about pages, tests and facts.
-- **Insights**: ranked facts about the parts in scope, each from a fixed rule with its number: yield, top fail bin, most frequent first fail, a site or wafer at least 2 points under the rest, and tests under the Cpk warning threshold. Each has a button to the page that shows more and, where it fits, **Filter to these**.
-- **Recent filters**: the last ten filters, to apply again in one click.
-
-The arrow at the bottom collapses the panel to a thin rail with icons for search, help and the part filter, then one per widget; click one, or the rail, to open it again.
+The arrow at the bottom collapses the panel to a thin rail with icons for search and help, then one per widget; click one, or the rail, to open it again.
 On narrow windows the panel floats above the page; click outside it or press Escape to close it.
 
 ## Status bar
@@ -75,15 +77,17 @@ Pages with charts have a bar of options above them; every chart follows, and the
 - **Axis range**: within the limits, the results, or both.
 - **Histogram**: % of each group or counts.
 - **Opacity** of bars and points.
+- **Legend** of a chart that compares layers (sites, files, groups; not the box plot): **Right** or **Left** over the plot, **Below** the axis, or **Off**. It is kept when you copy or save the chart.
+  **Legend names**, when the layers are files or groups: shortened (a long file name is cut in the middle), full names, lot and step (from each file's MIR or the lot details set on Home), or Dataset 1, 2, … Sites and bins keep their names.
 - **Lines** between the points of a chart of parts (a trend, a scatter, a trajectory): **Show** or **Hide**, with their width and opacity. Until you pick, a trajectory has its lines and a trend does not.
 
 ## Chart cards
 
-On Test explorer and Compare each chart is a card with a small header:
+On Test Explorer and Compare each chart is a card with a small header:
 
 - its **type menu**, to show the same data another way (a histogram as a box plot, a CDF or a trend, say), at once and without a new calculation;
 - **Settings** (the gear): the chart's look, see below;
-- **Expand** (⤢), so the chart fills the page, or on Test explorer the space between the tests and the statistics; Escape or the button again puts it back;
+- **Expand** (⤢), so the chart fills the page, or on Test Explorer the space between the tests and the statistics; Escape or the button again puts it back;
 - **More** (⋯, or a right click on the header): collapse the card to its title, copy the chart as an image, save it as PNG, or reset the zoom.
 
 The type and the collapsed state of each card are kept for that page. More pages follow.

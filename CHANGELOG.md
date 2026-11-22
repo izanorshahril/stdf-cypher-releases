@@ -2,6 +2,23 @@
 
 Each release, newest first. Downloads are on the [releases page](https://github.com/izanorshahril/stdf-cypher-releases/releases).
 
+## v0.4.3: Legends, Compare drag and warnings (2026-11-21)
+
+### Added
+- **Legends** on charts that compare layers (sites, files, groups; not the box plot): **Right** or **Left** over the plot, **Below** the axis, or **Off**, kept when you copy or save the chart. **Legend names** for files and groups: shortened, full, lot and step, or Dataset 1, 2, …
+- **Drag into Compare**: drag files or groups from Files onto Compare. **Remove from compare** on their right-click menu takes one out; with fewer than two left, Compare goes back to automatic.
+- **Compare warnings**: when tests matched as one differ in kind of result (parametric, multi-pin, functional) or in units, a warning above the charts counts them and the test list marks them ≠. The warning also names each entry's test program when they differ.
+- **Overview splits**: **Split the bars by** site, CMOD, lot or file; the automatic choice is marked in the list. **Bins as** switches between Count and %.
+- **Figures** in Test Explorer's Statistics picks what each layer shows: mean, sigma, min / max, median, Cp / Cpk and N.
+- **Lot Summary** columns resize: drag a heading's right edge, double-click it to fit.
+
+### Changed
+- **Check for a new version** runs each time the app opens and stays silent offline; set it to **Check now** only in Settings, Updates. The version beside the app's name shines with a dot while a newer one is out.
+- **Histograms and bars** of separate files compare in % of each, of one population (sites, bins) by count; the **%** / **Count** switch in the card header overrides it.
+- **Labels** sit beside their controls.
+- **Build the lot result** is offered only for a group with two runs or more that the recipe can combine.
+- **Chipper** stays with no files open and says how to open some.
+
 ## v0.4.2: Compare, Part Trace and panes (2026-11-18)
 
 ### Added

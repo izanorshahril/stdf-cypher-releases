@@ -14,10 +14,10 @@ Windows briefly shows a console window before the app hides it.
 
 ## Open files
 
-- **Open files** at the top of the side bar (Ctrl+O) opens the Windows file dialog.
+- **Open** at the top of the side bar (Ctrl+O) opens the Windows file dialog; right-click it for **Open a folder…**.
 - Drag files or folders anywhere onto the window.
 - Drop files onto the `stdf-cypher.exe` icon, or set it as the "Open with" program for `.stdf`.
-- Pick one from **Recent files** on Home or in the Files pane.
+- Pick one from **Recent files** on Home or in the File group of the side bar.
 
 STDF Cypher reads `.stdf` and `.std` files, also compressed as `.gz`, `.bz2` or `.zip` (a zip holds one STDF).
 A folder opens every STDF file in it and its subfolders; other files are skipped.
@@ -31,7 +31,7 @@ The Overview shows a **Cut off** count, so a lost PRR is never silent.
 The `synthetic_samples` folder holds made-up files, not from a tester:
 
 - three wafer-sort demo files: a lot, a shifted lot, and the same lot tested again on a second tester;
-- looped final-test files for the Drift report.
+- looped final-test files for the Drift Report.
 
 Each comes in the plain and the custom test-cell (TC) profile.
 You can make more with `stdf-cypher synthetic-sample` (see [Command line](08-command-line.md)).
@@ -39,8 +39,8 @@ You can make more with `stdf-cypher synthetic-sample` (see [Command line](08-com
 ## A first look
 
 1. Open a file. Home lists it under **Open datasets** and offers **Next steps**.
-2. Open **Lot summary** for the runs and yields, or **Overview** for bins and fail pareto.
-3. Click a test in the fail pareto to open it in **Test explorer**.
+2. Open **Lot Summary** for the runs and yields, or **Overview** for bins and fail pareto.
+3. Click a test in the fail pareto to open it in **Test Explorer**.
 4. Type a part filter at the top of the side panel, such as `site in (1,2)`, and every page follows it.
 
 ## Several windows

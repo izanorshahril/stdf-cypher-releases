@@ -3,9 +3,9 @@
 A **dataset** is what the pages work on: one STDF file, or several files combined.
 Files chooses the active one; the banner names it.
 
-## Files pane
+## File pane
 
-The **Files** group in the side bar lists the open datasets.
+The **File** group in the side bar lists the open datasets.
 A dataset of several files shows them under its arrow, and the active dataset is marked.
 Click a dataset to switch to it: it becomes the active dataset, named in the banner, and the pages show it.
 
@@ -28,6 +28,7 @@ In the shrunk side bar, the Files icon opens the pane in a flyout.
 
 Datasets from the same folder form a group named after the folder; a dataset alone is listed on its own.
 Dropping several folders on the window groups each folder's files.
+Untick **Auto group** at the top of the list to keep only the groups you make yourself; tick it again to group by folder, lot and part text.
 A file opened on its own, from another folder or dragged in later, joins the group of the open files of its lot ID; without a lot ID in common, the group of the file it shares the most part texts with.
 Files of one lot that are each on their own form a group named after the lot.
 A file you placed or took out by hand stays where you put it.
@@ -50,12 +51,12 @@ Engineering runs (MODE_COD E) are left out.
 
 - Pass 1 is the first run (T) with its continuations (C); each retest of rejects (F) starts the next pass; a 100% retest (R) starts the count over.
 - Every good part of every pass is kept.
-- A bad part in a bin that is not retested (**Bins not retested** on Lot summary) is kept from whichever pass.
+- A bad part in a bin that is not retested (**Bins not retested** on Lot Summary) is kept from whichever pass.
 - Every other bad part is kept from the last pass only, because the earlier ones went on to a retest.
 
-These are the parts the Lot summary counts as the lot's final result, so its yield matches.
+These are the parts the Lot Summary counts as the lot's final result, so its yield matches.
 The runs stay open on their own.
-The lot result is built when the group first matches, and built again when a run is added to the group; **Build the lot result** in the group's right-click menu builds it again or says why the group does not match.
+The lot result is built when the group first matches, and built again when a run is added to the group; **Build the lot result** in the group's right-click menu builds it again; the menu offers it only for a group with two runs or more that the recipe can combine.
 Closing a run closes its lot result.
 Settings, Opening files, turns the automatic build off.
 
@@ -63,7 +64,7 @@ Settings, Opening files, turns the automatic build off.
 
 A file with a missing or wrong lot, step, program, CMOD or mode in its MIR can still join its lot.
 **Lot details** on Home lists every open file with these five values: a grey value is the file's own, and a value you type replaces it in the app.
-The STDF file is not changed, but every page reads the new values: Overview, Lot summary, the Files pane, merging and the part filter (`lot = ...`).
+The STDF file is not changed, but every page reads the new values: Overview, Lot Summary, the File pane, merging and the part filter (`lot = ...`).
 **Edit lot details** in a dataset's right-click menu opens Home at that file.
 After a change, a lot result the change undoes (a CMOD changed, say) is built again.
 While an analysis is still reading the file, saving waits a few seconds and then says so, with nothing changed; save again when it finishes.
@@ -72,7 +73,7 @@ Another app window uses the new values for files it opens after the change.
 ## Combining and merging
 
 Files opened together can be combined into one dataset (set on Home, next to where files are opened).
-Files of the same lot and test step are offered for merging on **Merge, split & export**, where they can also be saved as one merged STDF.
+Files of the same lot and test step are offered for merging on **Merge, Split & Export**, where they can also be saved as one merged STDF.
 See [Pages](04-pages.md#merge-split--export).
 
 ## Order of opened files
@@ -82,8 +83,8 @@ This sets the run order on Part Trace.
 
 ## Renaming
 
-The pencil button next to the Dataset picker, or *Rename* on Home or in the Files pane, renames a dataset.
-The name is used in Compare, Match parts and chart titles; the file on disk keeps its name.
+The pencil button next to the Dataset picker, or *Rename* on Home or in the File pane, renames a dataset.
+The name is used in Compare, Match Part and chart titles; the file on disk keeps its name.
 
 ## Closing
 

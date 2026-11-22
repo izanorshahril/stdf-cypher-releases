@@ -9,7 +9,7 @@ This manual is also in the app: press F1, click **Help** at the top of the side 
 
 1. [Getting started](01-getting-started.md): start the app, open files, try it without data.
 2. [The window](02-layout.md): side bar, banner, side panel, status bar, search and menus.
-3. [Files and datasets](03-files.md): the Files pane, groups, merging, renaming and closing.
+3. [Files and datasets](03-files.md): the File pane, groups, merging, renaming and closing.
 4. [Pages](04-pages.md): what each page shows and how to use it.
 5. [Part filter](05-filters.md): the filter language, with examples.
 6. [Look and themes](06-look.md): themes, fonts, accent, effects, chart colours and shaded cells.
