@@ -1,12 +1,13 @@
 # The window
 
 The window has five parts: the side bar on the left, the banner at the top, the page in the middle, the side panel on the right and the status bar at the bottom.
-The banner only names the page and what it shows; the controls are in the side bars.
+The banner only names the page and its tab; the active dataset and the filters in use are at the top of the side panel.
 
 ## Side bar
 
 The side bar lists the pages in groups: Explore, Investigate, Data and Experimental.
 Click a group heading to fold or unfold it; the app remembers each group.
+The **File** list under Home stays at the top while the pages under it scroll; it takes at most half the window's height and scrolls its files on its own. Fold it to free the room.
 Home is at the top, with the version on the same line: click the version to check for a new one. It shines with a dot while a newer version is out.
 The **?** button at the top right opens this manual at the page you are on (F1 does the same).
 Settings is at the bottom.
@@ -27,11 +28,7 @@ Settings, Experimental features, picks which pages it takes along.
 
 ## Banner
 
-The banner names the page and its open tab, and shows what the page uses, without controls of its own:
-
-- the **active dataset**, the one the pages work on. It is picked in File; click its name to show it there, and rename it from its right-click menu;
-- the **parts**: all parts, or good parts only;
-- the **part filter**, when a page set one (**Use as filter**, **Filter to these**). Click it to clear it.
+The banner names the page and its open tab.
 
 ## Search
 
@@ -49,16 +46,28 @@ Use the arrow keys and Enter, or click a result.
 ## Side panel
 
 The side panel on the right starts with **Search** (Ctrl+K), the one search over pages, tests, actions, the manual and Chipper's facts.
-The part filter is out of the side panel for now: a filter set by a page shows in the banner, where a click clears it.
 
-Under the search are small widgets:
+Under it are the **active dataset**, the one single-file pages show (click it to switch to another open dataset, or to show it in File), **+ Filter**, and the **filters in use**, each as a chip.
+**+ Filter** offers good parts only (or all parts again), bad parts, parts with an alarm, sites, hard bins, soft bins, the first test of each part, or a custom filter in the [filter language](05-filters.md); it adds to the filters already in use.
+The chips:
+
+- **Good parts only**, when every page uses good parts only;
+- each part of the part filter joined by *and*, said plainly where it is a common one (`site in (1,2)` reads **Sites 1, 2**, `pass` reads **Good parts**); a filter with *or* at its top is one chip, since taking one side out would change the rest;
+- the page's own **Filter by** (Test Explorer, Compare), marked *page*.
+
+Click a chip's **×** to take that filter out (it brightens on hover); **Clear all** takes every one out.
+With no filter in use there is no chip.
+A filter can also come from a page (**Use as filter**, **Filter to these**) or from Search's recent filters; Search also switches good parts only on or off.
+
+Under them are small widgets:
 
 - **Chipper** (experimental): a helper that shows facts about the data, tips about the app and sections of this manual (**Read more** opens them).
   With no files open, Chipper says how to open some, with **Open files** and **Open a folder**.
   Urgent messages come first, marked **CHECK THIS**: a resource under its limit, and wafer, X, Y settings that look wrong for the open data (most parts missing them, empty placeholder values, many parts on few die positions, or a WXY test that disagrees), with a button to Settings.
+- **Marked parts**, while a part is marked: each one as a chip. A mark crosses the part on every chart, in every file it is in, and leaves the other parts as they are: it highlights, it does not filter. Click a part's name to show it on another page, **×** to unmark it; **Undo**, **Find in files** and **Clear all** are under them. After the last one goes, the widget stays on that page with **Undo**. Test Explorer and Compare say how many marked parts their chart shows.
 - **Insight**: ranked facts about the parts in scope, each from a fixed rule with its number: yield, top fail bin, most frequent first fail, a site or wafer at least 2 points under the rest, and tests under the Cpk warning threshold. Each has a button to the page that shows more and, where it fits, **Filter to these**.
 
-The arrow at the bottom collapses the panel to a thin rail with icons for search and help, then one per widget; click one, or the rail, to open it again.
+The arrow at the bottom collapses the panel to a thin rail with icons for search and help, the number of filters in use, then one per widget; click one, or the rail, to open it again.
 On narrow windows the panel floats above the page; click outside it or press Escape to close it.
 
 ## Status bar
@@ -78,6 +87,8 @@ Pages with charts have a bar of options above them; every chart follows, and the
 - **Histogram**: % of each group or counts.
 - **Opacity** of bars and points.
 - **Legend** of a chart that compares layers (sites, files, groups; not the box plot): **Right** or **Left** over the plot, **Below** the axis, or **Off**. It is kept when you copy or save the chart.
+  With more than eight files or groups, Right and Left leave the legend out, since it would cover the plot; the statistics beside the charts name each one, and Below still shows it.
+  Past eight layers the colours repeat, so layers 9 to 16 are drawn with square marks and dotted lines, and 17 to 24 with diamonds and dashes.
   **Legend names**, when the layers are files or groups: shortened (a long file name is cut in the middle), full names, lot and step (from each file's MIR or the lot details set on Home), or Dataset 1, 2, … Sites and bins keep their names.
 - **Lines** between the points of a chart of parts (a trend, a scatter, a trajectory): **Show** or **Hide**, with their width and opacity. Until you pick, a trajectory has its lines and a trend does not.
 

@@ -25,6 +25,13 @@ Windows 10 or 11, 64-bit. The app opens in its own window using the Edge or Chro
 - **Data and files**: Records, the part datalog, Edit and trim, Merge, split and export, and Match parts.
 - **Command line**: `stdf-cypher --help` lists every command, from `info` and `split` to `report` and `anomaly`.
 
+## Synthetic data only
+
+STDF Cypher was built and tested without real STDF data.
+Every STDF file used to build and test it was made from scratch by its own generator, `stdf-cypher synthetic-sample`, with made-up lots, parts and results.
+None of them comes from a tester, a test floor or a real product.
+Make such a file yourself with `stdf-cypher synthetic-sample out.stdf`.
+
 ## Manual
 
 The manual is built into the app (**Help**, or F1) and is also online: [docs/manual](https://github.com/izanorshahril/stdf-cypher-releases/blob/main/docs/manual/README.md).

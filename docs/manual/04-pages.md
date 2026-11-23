@@ -1,6 +1,6 @@
 # Pages
 
-Every page uses the dataset, the population (all parts or good parts only) and the part filter of the side panel, all named in the banner, unless it says otherwise.
+Every page uses the dataset, the population (all parts or good parts only) and the part filter shown at the top of the side panel, unless it says otherwise.
 Raw records, the part datalog, Find a part and Edit & Trim work on the whole file and say so.
 
 A page or tab has its own address, such as `#records/datalog`, and old addresses such as `#parttrace` still open their page.
@@ -99,16 +99,19 @@ When that file does not have it, the page says so and shows no test, and the tes
 
 Files or groups of files side by side, laid out like Test Explorer: every test on the left, the charts of one test in the middle with one layer per entry, and the entries on the right.
 
-- **What is compared**: with two Files groups or more, each group (and each file outside a group); otherwise every file. With groups, **Compare each** switches between each group and each file, to see every file in one view (up to eight). A group is its lot result when it has one, else its files together.
-- **Filter by** works as on Test Explorer, on every entry's parts; the test list, its columns and filters and the dock buttons work as there too (Columns adds Test #, Test name, Flag, Most σ and Fail % A).
+- **What is compared**: with two Files groups or more, each group (and each file outside a group); otherwise every file. With groups, **Compare each** switches between each group and each file, to see every file in one view. A group is its lot result when it has one, else its files together. The automatic entries follow the order of the File list.
+- **Up to 20 entries.** With more files or groups open, Compare takes the first 20 as File lists them and says so above the charts; a selection of more than 20 compares its first 20, with a note that stays until the entries change.
+- With more than eight entries, the cards above the charts show the reference's yield, the lowest and highest yield and the tests that moved; each entry's yield is listed beside it on the right.
+- **Filter by** works as on Test Explorer, on every entry's parts; the test list, its columns and filters and the dock buttons work as there too (Columns adds Test #, Test name, Flag, Most σ and Fail % D1).
 - A choice in Files takes over: **Compare** on a selection, **Compare with** or **Add to compare** on a file's or group's right-click menu, a file or group dragged onto this page, or a change on this page. **Remove from compare** on the same menu takes one out again; with fewer than two left, Compare goes back to automatic. **Back to automatic** returns to the groups or files.
 - When tests matched as one differ in kind of result (parametric, multi-pin, functional) or in units, a warning above the charts counts them and the test list marks them ≠: their shifts compare unlike values, most often because the files come from different test programs. The warning also names each entry's test program when they differ.
-- The entries are listed top to bottom as A, B, C… A is the reference. Drag one to reorder; ★ makes it the reference, ⚲ sets a filter of its parts (such as `site = 3`), × leaves it out, **+ Add** adds a file, a group or some parts of the active file. Up to eight entries.
+- The entries are listed top to bottom as D1, D2, D3…, or D01, D02… with ten entries or more; D1 is the reference. Hover one for its up and down arrows, or drag it onto the top or bottom half of another (a line shows where it goes); with the keyboard, focus an entry and press Alt+Up or Alt+Down. ★ makes it the reference, × leaves it out, **+ Add** adds a file or a group not compared yet.
 - The test list is sorted by how far a test moved from the reference, with a SHIFT or SPREAD flag (the worst over all entries); **CSV** downloads every test with each entry's mean, shift in sigma and fail %. Type a test and press Enter to open it.
 - The four chart cards work as on Test Explorer: histogram, trend (each entry's parts one after another), box plot, probability plot or CDF, with settings, Expand and More. Right-click a trend point to mark its part.
+- The box plot labels each box by its tag (D1, D01…) and names one statistic at a time, the one nearest the pointer, with the entry's full name (min, lower fence, q1, median, mean ± σ, q3, upper fence, max); the statistics on the right list them all.
 - On the right, each entry's statistics of the test, its shift from the reference and its fail %; the tick shows or hides the entry on the charts.
 
-The part filter of the side panel applies to every entry, together with the entry's own filter.
+The filters of the side panel and Filter by apply to every entry alike; an entry has no filter of its own.
 Ranking marker tests, group against the rest and drift are on [Marker Search](#marker-search).
 
 ### Wafer Map
@@ -140,13 +143,13 @@ STDF does not number touchdowns, so they are estimated.
 
 The same physical parts across files, as charts, a parts table and an Excel report.
 
-- The runs are the files Compare compares (a lot result stands for its group's files), in their order (R1, R2...). Tick or untick a run to choose them yourself; **Follow Compare** goes back.
-- **Where the fails went** shows the parts that failed in at least one run, run to run. Click a box to list its parts.
+- The runs are the files Compare compares (a lot result stands for its group's files), in their order (R1, R2…, or R01, R02… with ten runs or more). Tick or untick a run to choose them yourself; **Follow Compare** goes back.
 - **Follow test** draws the value of one test in every run.
 - Outcomes: recovered, still bad, not retested, never failed. Click one to show only those parts.
-- **Parts** lists each part's IDs and a column per run, Run 1, Run 2 and so on, with the part's hard bin in green (pass) or red (fail). Hover a column's name for its file, and a cell for the failing tests, the followed test's value and repeats. The search finds part text, WXY, `W24X111Y146`, `24, 111, 146` or a part ID.
-- **Filter runs** keeps the parts that pass, fail, were not tested or got one hard bin in a run: only the rejects of Run 2, say.
+- **Parts** lists each part's IDs and a column per run, R1, R2 and so on, with the part's hard bin in green (pass) or red (fail). Hover a column's name for its file, and a cell for the failing tests, the followed test's value and repeats. The search finds part text, WXY, `W24X111Y146`, `24, 111, 146` or a part ID.
+- **Filter runs** keeps the parts that pass, fail, were not tested or got one hard bin in a run: only the rejects of R2, say.
 - Right-click a part for **Show this part in** Test Explorer, Compare or Part Trail, with the part marked, or to copy its failing tests. Marked parts are highlighted in the table.
+- **Where the fails went** (experimental, at the bottom, shown only with experimental features on) draws the parts that failed in at least one run as a flow from run to run. Click a box to list its parts in Parts above.
 
 **Part trace report** writes each part's history to an Excel workbook: one row per part and one group of columns per file.
 **Identify parts by** picks the IDs; only wafer, X, Y from tests and PRR part text link parts across files, and the others are extra columns.
@@ -250,7 +253,7 @@ Rules are also shown as part filters, such as `t[1290] > 20.723`.
 
 ### Retest Recovery
 
-Follows parts through a chain of runs (run 1, a retest of its rejects, and so on), matched by part text by default.
+Follows parts through a chain of runs (R1, a retest of its rejects, and so on; R01, R02… with ten runs or more), matched by part text by default.
 It shows per run how many parts were due, retested, recovered or failed, a Sankey of where run 1's fails went, a trajectory chart and a run-to-run scatter.
 The **ID audit** finds IDs shared by different parts and placeholder values.
 **Recovery by failing value** finds a hard-bad zone, which **Use as hard-bad range** sends to Bad Candidate.

@@ -2,6 +2,28 @@
 
 Each release, newest first. Downloads are on the [releases page](https://github.com/izanorshahril/stdf-cypher-releases/releases).
 
+## v0.4.4: File order, filter chips and marks (2026-11-24)
+
+### Added
+- **Filter chips**: the filters in use show at the top of the side panel, each with a **×** to take it out, plus **Clear all**. With no filter there is no chip. **+ Filter** adds good parts only, bad parts, parts with an alarm, sites, hard or soft bins, the first test of each part, or a custom filter.
+- **Marked parts** in the side panel while a part is marked. Marks highlight a part on every chart and do not filter. Click a part to show it on another page, **×** to unmark it; **Undo** stays after the last one goes.
+- **Sort Files** by your order, name or test time.
+- **Reorder Files and Compare** with the up and down arrows on hover, or drag a file onto the top or bottom edge of another: a line shows where it goes, and a drop in the middle still groups them. Compare entries also move with Alt+Up and Alt+Down.
+- **Good parts only** can be switched on or off from Search (Ctrl+K).
+
+### Changed
+- **Compare** takes up to 20 files or groups, tagged D1, D2… (D01, D02… with ten or more). With more open it compares the first 20 and says so. Past eight entries the cards above the charts sum up the yields, each entry's yield is listed beside it, the legend over the plot is left out, and repeated colours get square or diamond marks and dotted or dashed lines.
+- **Compare filters**: an entry has no filter of its own; the side panel's filters and Filter by apply to every entry.
+- **Box plot hover** shows only the statistic under the pointer, on its own box.
+- **Banner**: only the page title. The active dataset is at the top of the side panel, where a click switches to another open file.
+- **Files** stays at the top of the side bar, at most half the window high, with its own scroll; fold it to free the room.
+- **Run tags** R1, R2… (R01, R02… with ten runs or more) on Part Trace and Retest recovery.
+- **Part Trace**: the flow chart sits below the parts table and shows only with Experimental on.
+- **Synthetic data only**: STDF Cypher was built and tested only with synthetic STDF files made from scratch by `stdf-cypher synthetic-sample`; the README now says so.
+
+### Fixed
+- Insight buttons and long card labels wrap in a narrow side panel instead of running off its edge.
+
 ## v0.4.3: Legends, Compare drag and warnings (2026-11-21)
 
 ### Added

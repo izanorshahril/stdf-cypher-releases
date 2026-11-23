@@ -1,13 +1,26 @@
 # Files and datasets
 
 A **dataset** is what the pages work on: one STDF file, or several files combined.
-Files chooses the active one; the banner names it.
+Files chooses the active one; the top of the side panel names it.
 
 ## File pane
 
 The **File** group in the side bar lists the open datasets.
 A dataset of several files shows them under its arrow, and the active dataset is marked.
-Click a dataset to switch to it: it becomes the active dataset, named in the banner, and the pages show it.
+Click a dataset to switch to it: it becomes the active dataset, named at the top of the side panel, and the pages show it.
+The list stays at the top of the side bar while the pages under it scroll, and takes at most half the window's height; a longer list scrolls on its own.
+
+## Order
+
+**Sort** at the top of the list lists the files in **your order**, by **name** or by **test time** (the start time in the file).
+Your order starts as the order the files were opened in.
+
+- Hover a file or a group for its up and down arrows (Tab reaches them too): a file moves among the other files of its group, or among the files and groups at the top; a group moves as a whole. A group's lot result and merged dataset stay at its top.
+- Drag a file onto the top or bottom edge of another: a line shows where it goes, and it is put there, in that file's group or on its own.
+- Moving a file while the list is sorted by name or time sorts it in your order from then on, starting from the order shown.
+
+Compare's automatic entries follow this order (D1 is the first).
+Your order lasts while the app window is open.
 
 ## Selecting several
 
@@ -34,9 +47,9 @@ Files of one lot that are each on their own form a group named after the lot.
 A file you placed or took out by hand stays where you put it.
 **Merge into one dataset** makes a group of the merged dataset, listed first, and the files it was made of; no lot result is built for that group.
 
-- Drag a dataset onto another to group the two.
-- Drag a dataset onto a group to add it.
-- Drag a dataset onto *Drop here to take it out of its group* to take it out.
+- Drag a dataset onto the middle of another to group the two.
+- Drag a dataset onto a group to add it; onto the top edge of a group's heading to put it just above the group, on its own.
+- Drag a dataset onto *Drop here to take it out of its group* to take it out and put it at the end of the list.
 
 Groups are labels in the app only: no file is moved, copied or renamed.
 
