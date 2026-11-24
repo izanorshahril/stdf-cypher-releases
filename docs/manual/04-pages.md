@@ -88,6 +88,7 @@ Marking the same part again from another file keeps one mark and adds the ID tha
 Statistics lists the marked parts with how many this chart shows.
 **Find in files** lists the open files the parts are in and opens one, **Undo** takes back the last change, and **Clear all** unmarks every part.
 Right-click a cross to unmark that part, copy its ID or find it in the other files.
+The crosses are labelled by one ID, the first in Settings order, or the one picked with **Name by** in the side panel's Marked parts.
 Right-click a point or a cross for **Show this part in**: Compare, Part Trace or Part Trail open with the part marked; Part Trace looks it up, Part Trail opens at its touchdown.
 Marks last until the app closes.
 
@@ -108,7 +109,7 @@ Files or groups of files side by side, laid out like Test Explorer: every test o
 - The entries are listed top to bottom as D1, D2, D3…, or D01, D02… with ten entries or more; D1 is the reference. Hover one for its up and down arrows, or drag it onto the top or bottom half of another (a line shows where it goes); with the keyboard, focus an entry and press Alt+Up or Alt+Down. ★ makes it the reference, × leaves it out, **+ Add** adds a file or a group not compared yet.
 - The test list is sorted by how far a test moved from the reference, with a SHIFT or SPREAD flag (the worst over all entries); **CSV** downloads every test with each entry's mean, shift in sigma and fail %. Type a test and press Enter to open it.
 - The four chart cards work as on Test Explorer: histogram, trend (each entry's parts one after another), box plot, probability plot or CDF, with settings, Expand and More. Right-click a trend point to mark its part.
-- The box plot labels each box by its tag (D1, D01…) and names one statistic at a time, the one nearest the pointer, with the entry's full name (min, lower fence, q1, median, mean ± σ, q3, upper fence, max); the statistics on the right list them all.
+- The box plot labels each box by its tag (D1, D01…) over its name, as the legends name it (the card's Settings, **Box names**), and names one statistic at a time, the one nearest the pointer, with the entry's full name (min, lower fence, q1, median, mean ± σ, q3, upper fence, max); the statistics on the right list them all.
 - On the right, each entry's statistics of the test, its shift from the reference and its fail %; the tick shows or hides the entry on the charts.
 
 The filters of the side panel and Filter by apply to every entry alike; an entry has no filter of its own.
@@ -146,15 +147,18 @@ The same physical parts across files, as charts, a parts table and an Excel repo
 - The runs are the files Compare compares (a lot result stands for its group's files), in their order (R1, R2…, or R01, R02… with ten runs or more). Tick or untick a run to choose them yourself; **Follow Compare** goes back.
 - **Follow test** draws the value of one test in every run.
 - Outcomes: recovered, still bad, not retested, never failed. Click one to show only those parts.
-- **Parts** lists each part's IDs and a column per run, R1, R2 and so on, with the part's hard bin in green (pass) or red (fail). Hover a column's name for its file, and a cell for the failing tests, the followed test's value and repeats. The search finds part text, WXY, `W24X111Y146`, `24, 111, 146` or a part ID.
+- **Parts** lists each part's IDs, its outcome and a column per run, R1, R2 and so on, with the part's hard bin in green (pass) or red (fail). Hover a column's name for its file, and a cell for the failing tests, the followed test's value and repeats. The search finds part text, WXY, `W24X111Y146`, `24, 111, 146` or a part ID.
+- **Export to Excel**, beside the search of Parts, writes the part trace report (below).
 - **Filter runs** keeps the parts that pass, fail, were not tested or got one hard bin in a run: only the rejects of R2, say.
-- Right-click a part for **Show this part in** Test Explorer, Compare or Part Trail, with the part marked, or to copy its failing tests. Marked parts are highlighted in the table.
+- Right-click a part, or a point of the trajectory chart, for **Mark this part**: it is crossed on every chart of every page, in every file it is in, listed in the side panel's Marked parts, and highlighted in the table. A marked part's menu has **Unmark**; a part's card has **Mark** too. The menu also copies its failing tests.
 - **Where the fails went** (experimental, at the bottom, shown only with experimental features on) draws the parts that failed in at least one run as a flow from run to run. Click a box to list its parts in Parts above.
 
-**Part trace report** writes each part's history to an Excel workbook: one row per part and one group of columns per file.
+**Part trace report** (**Export to Excel** on Parts) writes each part's history to an Excel workbook: one row per part with its IDs and its outcome (never failed, recovered, still bad, not retested, by the same rule as the page), and one group of columns per file: part ID, hard bin, site, first and last failing test, and the followed test's result when a test is followed.
+It holds every traced part of the ticked runs, whatever the table shows.
 **Identify parts by** picks the IDs; only wafer, X, Y from tests and PRR part text link parts across files, and the others are extra columns.
 When they disagree, wafer, X, Y decides, because it is read from the part's own memory.
-The **ID audit** lists parts whose IDs disagree, and the workbook has an ID audit sheet and a Summary sheet.
+**Notes on the IDs**, folded under the runs, gathers what needs a look: repeated tests of a part, IDs that disagree or sit on several parts, the **ID audit** and the shared parts of each pair of files; its line shows a badge for each, and a click opens it.
+The workbook has an ID audit sheet and a Summary sheet.
 
 **Find a part**, on this page, looks one part up by any ID.
 

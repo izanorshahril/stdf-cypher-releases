@@ -2,6 +2,23 @@
 
 Each release, newest first. Downloads are on the [releases page](https://github.com/izanorshahril/stdf-cypher-releases/releases).
 
+## v0.4.5: Legend menu, mark names, trace outcome (2026-11-24)
+
+### Added
+- **Legend menu**: right-click a chart's legend to hide or show that layer, show it alone, show all, or **Move the legend** (right, left, below or hidden).
+- **Name marks by** an ID of your choice, for example CWXY or ULT: **Name by** in the side panel's Marked parts, or right-click a marked part. The chip and the crosses on every chart use that ID; a part without it keeps its first. The right-click menu also copies a mark's IDs, finds it in the files, shows it on another page or unmarks it.
+- **Mark this part** on Part Trace: right-click a part, or its line on the trajectory chart, or use **Mark** on the part's card. The part is crossed on every chart of every page and highlighted in the table; the table keeps its search.
+- **Outcome** column in the part trace report (never failed, recovered, still bad, not retested, by the same rule as the page), and the followed test's result for each run.
+- **F2** renames the file or group in Files; after a click on a file, it renames that file.
+
+### Changed
+- **Legend place per chart**: each chart keeps its own; a chart card keeps one for each chart type, so a histogram can have it at the left and a probability plot below.
+- **Compare box plot**: each box is labelled with its tag over its name, named as the legends name it (**Box names** in the card's settings).
+- **Part Trace**: the notes on the IDs (repeated tests, IDs that disagree, the ID audit, shared parts by pair) are folded under one line of badges below the runs. **Export to Excel** sits beside the search of Parts. The CSV download is gone: the report holds all it had.
+
+### Fixed
+- A right-click on a legend entry no longer hides that layer.
+
 ## v0.4.4: File order, filter chips and marks (2026-11-24)
 
 ### Added

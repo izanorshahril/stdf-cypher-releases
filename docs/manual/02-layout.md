@@ -65,6 +65,7 @@ Under them are small widgets:
   With no files open, Chipper says how to open some, with **Open files** and **Open a folder**.
   Urgent messages come first, marked **CHECK THIS**: a resource under its limit, and wafer, X, Y settings that look wrong for the open data (most parts missing them, empty placeholder values, many parts on few die positions, or a WXY test that disagrees), with a button to Settings.
 - **Marked parts**, while a part is marked: each one as a chip. A mark crosses the part on every chart, in every file it is in, and leaves the other parts as they are: it highlights, it does not filter. Click a part's name to show it on another page, **×** to unmark it; **Undo**, **Find in files** and **Clear all** are under them. After the last one goes, the widget stays on that page with **Undo**. Test Explorer and Compare say how many marked parts their chart shows.
+  When the marks hold more than one kind of ID (wafer, X, Y and part text, say), **Name by** picks the one each part is named by, on its chip and on the charts, for example CWXY or ULT; a part without that ID keeps its first. Right-click a chip for the same choice, to copy its IDs, find it in the files, show it on another page or unmark it.
 - **Insight**: ranked facts about the parts in scope, each from a fixed rule with its number: yield, top fail bin, most frequent first fail, a site or wafer at least 2 points under the rest, and tests under the Cpk warning threshold. Each has a button to the page that shows more and, where it fits, **Filter to these**.
 
 The arrow at the bottom collapses the panel to a thin rail with icons for search and help, the number of filters in use, then one per widget; click one, or the rail, to open it again.
@@ -86,10 +87,10 @@ Pages with charts have a bar of options above them; every chart follows, and the
 - **Axis range**: within the limits, the results, or both.
 - **Histogram**: % of each group or counts.
 - **Opacity** of bars and points.
-- **Legend** of a chart that compares layers (sites, files, groups; not the box plot): **Right** or **Left** over the plot, **Below** the axis, or **Off**. It is kept when you copy or save the chart.
+- **Legend** of a chart that compares layers (sites, files, groups; not the box plot, whose axis names each box): **Right** or **Left** over the plot, **Below** the axis, or **Off**. Each chart keeps its own: a card keeps one for each chart type, so its histogram can have the legend at the left and its probability plot below. Set it in the card's **Settings**, or right-click the legend. It is kept when you copy or save the chart.
   With more than eight files or groups, Right and Left leave the legend out, since it would cover the plot; the statistics beside the charts name each one, and Below still shows it.
   Past eight layers the colours repeat, so layers 9 to 16 are drawn with square marks and dotted lines, and 17 to 24 with diamonds and dashes.
-  **Legend names**, when the layers are files or groups: shortened (a long file name is cut in the middle), full names, lot and step (from each file's MIR or the lot details set on Home), or Dataset 1, 2, … Sites and bins keep their names.
+  **Legend names**, when the layers are files or groups: shortened (a long file name is cut in the middle), full names, lot and step (from each file's MIR or the lot details set on Home), or Dataset 1, 2, … Sites and bins keep their names. Compare's box plot names its boxes the same way.
 - **Lines** between the points of a chart of parts (a trend, a scatter, a trajectory): **Show** or **Hide**, with their width and opacity. Until you pick, a trajectory has its lines and a trend does not.
 
 ## Chart cards
@@ -104,7 +105,7 @@ On Test Explorer and Compare each chart is a card with a small header:
 The type and the collapsed state of each card are kept for that page. More pages follow.
 
 A card's **Settings** hold what the bar of options holds on other pages, for that chart: on a histogram its bin size, **2D** or **3D** (3D by default, for every histogram at once) and in 3D the **Depth**, how far each layer stands behind the one before it (0 puts them in one plane); on a chart of points its lines; the opacity and the axis range.
-The bin size is the chart's own; the other settings apply to every chart.
+The bin size and the legend are the chart's own; the other settings apply to every chart.
 Other charts are always 2D.
 On pages without cards, each histogram has these above it.
 
@@ -114,6 +115,7 @@ The resource monitor at the right of the status bar opens a small window with a 
 
 A right click anywhere offers: open files, switch dataset, go to any page or tab, search, refresh, the side bar and panel switches, light or dark, and the theme.
 On a chart it adds **Reset zoom**, **Save chart as PNG** and **Copy chart as image** (also a button in the chart's toolbar), ready to paste into a mail, a chat or a slide.
+A click on a legend entry hides or shows that layer and a double click shows it alone, as in any chart; a right click on the legend never hides a layer, it opens the legend's menu: hide or show that layer, show it alone, show all, or **Move the legend** of this chart (right, left, below or hidden).
 Files, groups and Chipper have menus of their own.
 
 Shift + right click, or a right click in a text field or on selected text, keeps the browser's own menu.
@@ -125,5 +127,6 @@ Shift + right click, or a right click in a text field or on selected text, keeps
 | Ctrl+O | Open files |
 | Ctrl+K | Search |
 | F1 | Help for this page |
+| F2 | Rename the file or group in Files, or the active dataset |
 | Escape | Close a menu, the search, a flyout or the floating side panel |
 | Arrow keys | Move in menus, flyouts and the search; resize a focused pane edge |

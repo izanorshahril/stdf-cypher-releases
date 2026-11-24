@@ -55,6 +55,7 @@ Groups are labels in the app only: no file is moved, copied or renamed.
 
 Right-click a dataset to switch to it, open it on a page, compare it or add it to Compare, rename it, edit its lot details, move it to a group, show it in its folder or close it.
 Right-click a group to fold, rename, merge, build its lot result, ungroup or close it.
+**F2** renames the file or group that has focus in Files; after a click on a file, it renames that file, the active dataset.
 
 ## Lot results
 
