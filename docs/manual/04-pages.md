@@ -1,9 +1,9 @@
 # Pages
 
 Every page uses the dataset, the population (all parts or good parts only) and the part filter shown at the top of the side panel, unless it says otherwise.
-Raw records, the part datalog, Find a part and Edit & Trim work on the whole file and say so.
+Raw records, the Datalog, Find a part and Edit & Trim work on the whole file and say so.
 
-A page or tab has its own address, such as `#records/datalog`, and old addresses such as `#parttrace` still open their page.
+A page or tab has its own address, such as `#data/trim`, and old addresses such as `#parttrace` still open their page.
 Settings, Pages, removes a page you do not use from the side bar.
 
 ## General
@@ -149,8 +149,10 @@ The same physical parts across files, as charts, a parts table and an Excel repo
 - Outcomes: recovered, still bad, not retested, never failed. Click one to show only those parts.
 - **Parts** lists each part's IDs, its outcome and a column per run, R1, R2 and so on, with the part's hard bin in green (pass) or red (fail). Hover a column's name for its file, and a cell for the failing tests, the followed test's value and repeats. The search finds part text, WXY, `W24X111Y146`, `24, 111, 146` or a part ID.
 - **Export to Excel**, beside the search of Parts, writes the part trace report (below).
-- **Filter runs** keeps the parts that pass, fail, were not tested or got one hard bin in a run: only the rejects of R2, say.
-- Right-click a part, or a point of the trajectory chart, for **Mark this part**: it is crossed on every chart of every page, in every file it is in, listed in the side panel's Marked parts, and highlighted in the table. A marked part's menu has **Unmark**; a part's card has **Mark** too. The menu also copies its failing tests.
+- A filter under each column of Parts narrows the table: text for the IDs, the outcome, and for each run pass, fail, not tested or one hard bin: only the rejects of R2, say.
+- **Show** lists the parts that failed in a run or all parts, and, while a part is marked, only the marked parts.
+- Right-click a part, or a point of the trajectory chart, for **Mark this part**: it is crossed on every chart of every page, in every file it is in, listed in the side panel's Marked parts, and highlighted in the table. A marked part's menu has **Unmark**; a part's card has **Mark** too.
+- The same menu has **Show this part in** Test Explorer, Compare or Part Trail, on the followed test, with the part marked, and copies its failing tests.
 - **Where the fails went** (experimental, at the bottom, shown only with experimental features on) draws the parts that failed in at least one run as a flow from run to run. Click a box to list its parts in Parts above.
 
 **Part trace report** (**Export to Excel** on Parts) writes each part's history to an Excel workbook: one row per part with its IDs and its outcome (never failed, recovered, still bad, not retested, by the same rule as the page), and one group of columns per file: part ID, hard bin, site, first and last failing test, and the followed test's result when a test is followed.
@@ -198,9 +200,11 @@ PRR opens as the part table (part text, alarms and first fail, with the part fil
 PTR, MPR, FTR, STR and TSR can be filtered by test number.
 Unknown records are listed by type and subtype, such as `UNKNOWN 180/10`, with a hex preview.
 
-### Part Datalog
+### Datalog
 
+The results of the parts and tests you pick, with their limits, as text or CSV; a page of its own under Data.
 Type a part ID, PRR X/Y (`3,-2`, `W01 3,-2`), a WXY code, wafer, X and Y, or part text, and click a match to add the part; or paste a list.
+While parts are marked, **Marked parts** lists them: click one to add it, or **Add all marked** for every marked part in this file (each test of it).
 Give each part a mark and set the order with the arrows.
 Pick tests the same way; a test a part lacks prints as N/A.
 Save as readable text (one block per part) or CSV.

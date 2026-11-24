@@ -48,7 +48,7 @@ Use the arrow keys and Enter, or click a result.
 The side panel on the right starts with **Search** (Ctrl+K), the one search over pages, tests, actions, the manual and Chipper's facts.
 
 Under it are the **active dataset**, the one single-file pages show (click it to switch to another open dataset, or to show it in File), **+ Filter**, and the **filters in use**, each as a chip.
-**+ Filter** offers good parts only (or all parts again), bad parts, parts with an alarm, sites, hard bins, soft bins, the first test of each part, or a custom filter in the [filter language](05-filters.md); it adds to the filters already in use.
+**+ Filter** offers good parts only (or all parts again), bad parts, parts with an alarm, sites, hard bins, soft bins, the first test of each part, the values of the Loadboard ID and of each other trace field of Settings, or a custom filter in the [filter language](05-filters.md); it adds to the filters already in use.
 The chips:
 
 - **Good parts only**, when every page uses good parts only;

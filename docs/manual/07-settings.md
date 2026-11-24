@@ -58,7 +58,7 @@ An empty template is the default.
 
 ## Die coordinates from tests
 
-The X and Y offset tests (defaults `80103` and `80104`) added to the X and Y tests rebuild die X and Y for Wafer Map, Bad Candidate and the Part Datalog.
+The X and Y offset tests (defaults `80103` and `80104`) added to the X and Y tests rebuild die X and Y for Wafer Map, Bad Candidate and the Datalog.
 The offset can also be subtracted, and flip X and flip Y turn the map.
 Identification does not use the offsets: the chip ID (CWXY) reads its tests as logged.
 On Wafer Map, **Apply OXY** (on by default) adds them; untick it for an older program that logs X and Y already offset.
@@ -68,8 +68,10 @@ They change how parts are identified only when **Check WXY against** is die X/Y.
 
 ## Other trace fields
 
-The test program revision, the loadboard test (default `5100`) and any other IDs you add.
+IDs a test logs for each part, one per row with a name and a test number: **Program version**, **Loadboard ID** (test `5100` by default) and any other ID you add with **+ Add other ID**.
+The first two names are defaults: type another name to use it everywhere, or clear the box for the default.
 Untick **trace** for a test a program does not log; it is then left out of tracing only.
+Each one with a test number can be compared and filtered on: a choice of **Compare by** on Test Explorer (its groups named by it, such as `Loadboard ID 3`), **Color parts by** on Match Part, the ANOVA factor, and **+ Filter** in the side panel.
 
 The loadboard is read per file (the most common value), so parts missing it take their file's board, and a file whose board changes is flagged.
 It is the filter field `loadboard`, and a factor in colour-by, ANOVA and Bad Candidate.

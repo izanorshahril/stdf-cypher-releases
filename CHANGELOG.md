@@ -2,6 +2,24 @@
 
 Each release, newest first. Downloads are on the [releases page](https://github.com/izanorshahril/stdf-cypher-releases/releases).
 
+## v0.4.6: Datalog page and trace fields (2026-11-25)
+
+### Added
+- **Datalog** page under Data: it was the Part Datalog tab of Records, and is now a page of its own. While parts are marked, **Marked parts** lists them: click one to add it, or **Add all marked** for every marked part in the file. Old addresses still open it.
+- **Part Trace**: a filter under each column of Parts (the IDs, the outcome, and per run pass, fail, not tested or a hard bin); the trajectory chart follows them. **Show** lists only the marked parts while a part is marked. A part's right-click menu has **Show this part in** Test Explorer, Compare or Part Trail.
+- **Trace fields to compare and filter on**: each field of Settings, Other trace fields, with a test number is a choice of **Compare by** on Test Explorer, **Color parts by** on Match Part and the ANOVA factor, its groups named by it (for example "Loadboard ID 3"), and an entry of **+ Filter** in the side panel.
+
+### Changed
+- **Settings, Other trace fields**: one row per ID, with its name and test: **Program version** and **Loadboard ID** (both names can be changed), then **+ Add other ID**.
+- **Records** is a page of its own.
+
+### Fixed
+- The part trace report followed the first pin of a test when two pins share its number.
+- A mark kept an ID that a reader writes when it has none (W0X0Y0, FFFFFFFF), and so marked every part that had it.
+- A chart legend hidden from its right-click menu can be brought back in the chart's Settings; **Show all** no longer shows lines a chart hides itself.
+- F2 renamed the active file when focus was on another control in Files.
+- Part Trace kept its search and the open part when a part was marked, and finds marked parts when wafer, X, Y is written in a custom form.
+
 ## v0.4.5: Legend menu, mark names, trace outcome (2026-11-24)
 
 ### Added
