@@ -51,8 +51,11 @@ The table downloads as CSV.
 
 ### Overview
 
-KPIs, the hard and soft bin pareto, yield by site, wafer and file, a stacked bin map, the fail pareto and the bins.
-Click a test in the fail pareto to open it in Test Explorer.
+KPIs, the hard and soft bin pareto, the fail pareto by test, yield by site, wafer and file, a stacked bin map, the fail pareto table and the bins.
+Click a test in the fail pareto chart or table to open it in Test Explorer.
+Above the charts, **Top** sets how many bins (and tests on the fail pareto chart) to show, largest first; 0 shows every bin.
+**Pass bins** shows or hides the pass bins on the bin charts, and **Bins to show** has a tick for each hard and soft bin, with **All** and **None**.
+The bin tables keep every bin, and the choice is kept for the next file.
 **Split the bars by** shows each group separately: site, CMOD, lot or file, whichever the dataset holds more than one of.
 Split by site or CMOD (groups of one population), the bins are counted; split by lot or file (separate populations), they are % of each, so groups of different size share a scale. **Bins as** switches between Count and %, and each kind keeps your choice.
 The automatic choice is marked "automatic" in the list: CMOD for a lot result (its runs), lot when the dataset holds several lots, file for other files, and none for one file; pick a site split for one file.
@@ -128,8 +131,13 @@ The value is the yield, parts or bad parts, the share or count of a bin, the mea
 Bars on top and at the side give the same value for each column and row of sites.
 Rates and test values are coloured against the value over all sites, the worse side in the fail colour.
 
-The places follow the file's sites: four sites are placed `1 2` over `4 3`, eight sites `5 1 4 8` over `6 2 3 7`, and other counts in rows from left to right.
+The places follow the file's sites: four sites are placed `1 2` over `4 3`; eight, twelve or sixteen in two rows from the middle out, sixteen as `13 9 5 1 4 8 12 16` over `14 10 6 2 3 7 11 15`; other counts in rows from left to right.
+A site between the file's sites that tested no part, such as sites 5 and 6 blocked on a 16-site run, keeps its place and is shown as blocked.
 **Layout** changes the rows, the columns and the site in each place for the open dataset; it is not saved, so the next file starts from its own sites.
+A layout of more than seven columns sits under the map; **Hide** puts the layout away for a wider map, and **Show layout** brings it back.
+**By site**, under the map, lists the bins or the tests with a column for each site: the share of the site's parts in the bin or outside the test's limits, or the parts (**%** or **Parts**).
+It has a filter under each column and a Columns menu; click a bin or a test to show it on the map.
+With more than eight sites the site columns are named short: S1 to S8, or S01, S02… when a site number has two digits.
 
 ### Part Trail
 
@@ -145,6 +153,7 @@ STDF does not number touchdowns, so they are estimated.
 The same physical parts across files, as charts, a parts table and an Excel report.
 
 - The runs are the files Compare compares (a lot result stands for its group's files), in their order (R1, R2…, or R01, R02… with ten runs or more). Tick or untick a run to choose them yourself; **Follow Compare** goes back.
+  A file taken out of Compare leaves the runs at once, and right-clicking a run's column in Parts offers **Remove** (out of Compare too while the runs follow it).
 - **Follow test** draws the value of one test in every run.
 - Outcomes: recovered, still bad, not retested, never failed. Click one to show only those parts.
 - **Parts** lists each part's IDs, its outcome and a column per run, R1, R2 and so on, with the part's hard bin in green (pass) or red (fail). Hover a column's name for its file, and a cell for the failing tests, the followed test's value and repeats. The search finds part text, WXY, `W24X111Y146`, `24, 111, 146` or a part ID.
@@ -155,7 +164,8 @@ The same physical parts across files, as charts, a parts table and an Excel repo
 - The same menu has **Show this part in** Test Explorer, Compare or Part Trail, on the followed test, with the part marked, and copies its failing tests.
 - **Where the fails went** (experimental, at the bottom, shown only with experimental features on) draws the parts that failed in at least one run as a flow from run to run. Click a box to list its parts in Parts above.
 
-**Part trace report** (**Export to Excel** on Parts) writes each part's history to an Excel workbook: one row per part with its IDs and its outcome (never failed, recovered, still bad, not retested, by the same rule as the page), and one group of columns per file: part ID, hard bin, site, first and last failing test, and the followed test's result when a test is followed.
+**Part trace report** (**Export to Excel** on Parts) writes each part's history to an Excel workbook: one row per part with its IDs and its outcome (never failed, recovered, still bad, not retested, by the same rule as the page), and one group of columns per file: part ID, hard bin, site, first and last failing test, and, titled **Value of** the test, the result of a test you typed in **Follow test**.
+The test Part Trace opens on by itself is not exported: the report stays at five columns per file.
 It holds every traced part of the ticked runs, whatever the table shows.
 **Identify parts by** picks the IDs; only wafer, X, Y from tests and PRR part text link parts across files, and the others are extra columns.
 When they disagree, wafer, X, Y decides, because it is read from the part's own memory.

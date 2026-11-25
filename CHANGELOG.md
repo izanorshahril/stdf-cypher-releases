@@ -2,6 +2,23 @@
 
 Each release, newest first. Downloads are on the [releases page](https://github.com/izanorshahril/stdf-cypher-releases/releases).
 
+## v0.4.7: Bin picks, test pareto, site tables (2026-11-25)
+
+### Added
+- **Overview**: the bin charts show the **Top** N bins, with **Pass bins** shown or hidden, and **Bins to show** has a tick for each hard and soft bin. A new **Fail pareto by test** chart shows the parts each test failed first and the parts outside its limits; click a bar to open the test in Test Explorer.
+- **Site Map**: **By site** under the map lists the bins or the tests with a column per site (% or parts), with column filters and a Columns menu; click one to show it on the map. With more than eight sites the columns are named S1, S2… (S01, S02… with two-digit sites).
+- **Files**: each file or group Compare compares carries its tag (D1, D2…) left of its name; one taken out of Compare loses it.
+- **Part Trace**: right-click a run's column in Parts to remove that run.
+
+### Changed
+- **Site Map**: sites between the file's sites that tested no part, such as two blocked sites on a 16-site run, keep their place and show as blocked. Sixteen sites lay out from the middle out (13 9 5 1 4 8 12 16 over 14 10 6 2 3 7 11 15), as do twelve. A wide layout sits under the map, its boxes scroll instead of being cut off, and **Hide** puts it away for a wider map.
+- **Auto group** unticked builds no lot result on its own and closes the ones the app built; ticking it again builds them again.
+- **Part Trace** drops a run as soon as its file is taken out of Compare.
+
+### Fixed
+- The part trace report added a column to every run for the test the page opens on by itself; it now has one only for a test you type in **Follow test**, titled "Value of" that test.
+- The app name, version and help button overlapped the page when the sidebar was narrow; the version, then the help button, now hide.
+
 ## v0.4.6: Datalog page and trace fields (2026-11-25)
 
 ### Added

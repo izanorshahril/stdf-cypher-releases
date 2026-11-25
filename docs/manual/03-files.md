@@ -42,6 +42,8 @@ In the shrunk side bar, the Files icon opens the pane in a flyout.
 Datasets from the same folder form a group named after the folder; a dataset alone is listed on its own.
 Dropping several folders on the window groups each folder's files.
 Untick **Auto group** at the top of the list to keep only the groups you make yourself; tick it again to group by folder, lot and part text.
+With it unticked the app builds no lot result on its own and closes the ones it built (one you built from a group's menu stays); ticking it again builds them again.
+Each file or group that Compare compares carries its tag (D1, D2…) left of its name; one taken out of Compare loses it, and the others are numbered again.
 A file opened on its own, from another folder or dragged in later, joins the group of the open files of its lot ID; without a lot ID in common, the group of the file it shares the most part texts with.
 Files of one lot that are each on their own form a group named after the lot.
 A file you placed or took out by hand stays where you put it.

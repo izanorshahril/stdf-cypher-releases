@@ -9,6 +9,7 @@ The side bar lists the pages in groups: Explore, Investigate, Data and Experimen
 Click a group heading to fold or unfold it; the app remembers each group.
 The **File** list under Home stays at the top while the pages under it scroll; it takes at most half the window's height and scrolls its files on its own. Fold it to free the room.
 Home is at the top, with the version on the same line: click the version to check for a new one. It shines with a dot while a newer version is out.
+A narrow sidebar hides the version, then the help button, so the name stays clear of the page; a waiting update keeps the version in place of the help button.
 The **?** button at the top right opens this manual at the page you are on (F1 does the same).
 Settings is at the bottom.
 **Open** under them opens STDF files; right-click it to open a whole folder, or drop files and folders anywhere on the window.
