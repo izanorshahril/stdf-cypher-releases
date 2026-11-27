@@ -8,8 +8,11 @@ There is no installer and no admin rights are needed.
 The program is not signed, so Windows may show a SmartScreen warning the first time it runs a downloaded copy: choose **More info**, then **Run anyway**.
 Or unblock the zip before extracting it: right-click it, **Properties**, tick **Unblock**, or run `Unblock-File` on it in PowerShell.
 
-The app opens in its own window using the Edge or Chrome engine already on the PC.
-If neither is installed, it opens in your default browser and works the same way.
+The app opens in its own window on WebView2, the Edge engine that ships with Windows 10 and 11; closing the window quits the app.
+File dialogs belong to the window, CSV and PNG files go to Downloads, and Help links and other sites open in your default browser.
+Opening another STDF file from Explorer while the app runs adds it to the open window.
+Without the WebView2 runtime it opens an Edge or Chrome `--app` window instead, and without either your default browser; it works the same way.
+Set the `STDF_CYPHER_BROWSER` environment variable to a Chromium browser's path to use that browser instead of WebView2.
 Windows briefly shows a console window before the app hides it.
 
 ## Open files

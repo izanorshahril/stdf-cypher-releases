@@ -90,6 +90,7 @@ Pages with charts have a bar of options above them; every chart follows, and the
 - **Opacity** of bars and points.
 - **Legend** of a chart that compares layers (sites, files, groups; not the box plot, whose axis names each box): **Right** or **Left** over the plot, **Below** the axis, or **Off**. Each chart keeps its own: a card keeps one for each chart type, so its histogram can have the legend at the left and its probability plot below. Set it in the card's **Settings**, or right-click the legend. It is kept when you copy or save the chart.
   With more than eight files or groups, Right and Left leave the legend out, since it would cover the plot; the statistics beside the charts name each one, and Below still shows it.
+  A chart with its own legend in rows above the plot lists more than twelve layers beside the plot instead, scrolling when the list is taller than the chart, so the rows never cover the title.
   Past eight layers the colours repeat, so layers 9 to 16 are drawn with square marks and dotted lines, and 17 to 24 with diamonds and dashes.
   **Legend names**, when the layers are files or groups: shortened (a long file name is cut in the middle), full names, lot and step (from each file's MIR or the lot details set on Home), or Dataset 1, 2, … Sites and bins keep their names. Compare's box plot names its boxes the same way.
 - **Lines** between the points of a chart of parts (a trend, a scatter, a trajectory): **Show** or **Hide**, with their width and opacity. Until you pick, a trajectory has its lines and a trend does not.
@@ -105,6 +106,13 @@ On Test Explorer and Compare each chart is a card with a small header:
 
 The type and the collapsed state of each card are kept for that page. More pages follow.
 
+### Chart height
+
+On Test Explorer, Compare, Abnormal Test and Overview the charts take the height that puts their first two rows in the window, from where the charts start down to the bottom of the page; they size again when the window or a panel changes.
+They are never shorter than 200 px, so a small window scrolls.
+Drag the bottom edge of any chart (the short bar that shows on hover) to make every chart of the page taller or shorter at once, or focus the edge and use the up and down arrow keys.
+The height you set is kept for that page; a double click on the edge fits the charts to the window again.
+
 A card's **Settings** hold what the bar of options holds on other pages, for that chart: on a histogram its bin size, **2D** or **3D** (3D by default, for every histogram at once) and in 3D the **Depth**, how far each layer stands behind the one before it (0 puts them in one plane); on a chart of points its lines; the opacity and the axis range.
 The bin size and the legend are the chart's own; the other settings apply to every chart.
 Other charts are always 2D.
@@ -112,11 +120,54 @@ On pages without cards, each histogram has these above it.
 
 The resource monitor at the right of the status bar opens a small window with a card per resource: a bar of this app's share and the whole PC's, a mark at the low limit, and a sparkline of the last two minutes.
 
+## Panels
+
+On Test Explorer, Compare and Site Map the boxes around the charts are panels you arrange, as on a dashboard; more pages follow.
+
+- The dock buttons in a panel's head put it on the left, on the right or at the bottom.
+- Drag a side's inner edge, or the bottom's top edge, to resize it; a double click gives the default size back.
+- **–** in a panel's head minimizes it to its title bar, in its place, and the other panels of its side take the room; a click on the title bar, or **+**, opens it again.
+- A side whose panels are all minimized becomes a narrow strip with their titles; a click opens them all.
+
+Where each panel sits, its size and whether it is minimized are kept for each page.
+
+## Tables
+
+Every table works the same way, on every page:
+
+- **CSV** saves the rows shown as a file, and **Copy** puts them on the clipboard to paste into a sheet; the search and the column filters apply, and so do the columns shown.
+- A click on a header sorts by that column, again reverses it.
+- Drag a header's right edge to make the column wider or narrower; a double click fits it again.
+- A right click on a header: **Highlight cells…** frames the cells that pass a rule written as a column filter (`>1.33`, `<=5`, `1..2`, `!text`), **Clear the highlight**, **Fit the width**, and, where the table has a **Columns** menu, **Move left**, **Move right** and **Hide this column**.
+- A right click on a row copies the cell, the row, or the test the row is about.
+- **Columns** lists the columns shown first, in their order, then the others.
+  Tick a column to add it at the end; drag a column's grip (⠿) to move it, or press Alt+Up or Alt+Down on it.
+  A header dragged sideways moves its column too; the first column stays first.
+  **Default columns** goes back to the page's own.
+- A column the rows leave empty is hidden while it is (**Columns** marks it *(empty)*) and shows again when rows fill it.
+  Until you pick, a table also shows the alarm columns wherever the data has alarms.
+
+Widths, highlights and the columns' order are kept for each table that keeps its columns.
+
+### Test tables
+
+Every table of tests offers the same common columns under **Columns**, in the same order, around the page's own:
+
+- First the test's facts: **Test order**, **Test #**, **Test name**, **Units**, **Low limit** and **High limit**.
+  **Test order** is 1 for the first test the file runs, then 2, and so on, whatever the test numbers, so test 10000 can come before test 6000; sort by it to read the tests in flow order, or filter it (`<100`) for the start of the flow.
+  It is where the file first runs each test, so a test only some parts run is placed where it first runs.
+- Then the page's own columns.
+- Then what the parts selected did on the test: **N**, **Mean**, **Sigma**, **Min**, **Max**, **Median**, **Cpk**, **Fails**, **Fail %**, **HBin**, **SBin**, **Alarms** (the parts whose result carried the tester's alarm flag) and **Instr. alarms** (the instrument alarm records in the datalog that name the test's number).
+  They follow the page's filter and the dataset the table is about (each run on Kill & Catch); filter the alarm columns with `>0` for the tests that raised any.
+  Compare, which spans several files, offers the facts only.
+
+A page's own column of the same name keeps its own meaning (Abnormal Test's **N** counts the results it compared), and a page column with another meaning (Site Map's **All sites %**) replaces the common one.
+
 ## Right-click menus
 
 A right click anywhere offers: open files, switch dataset, go to any page or tab, search, refresh, the side bar and panel switches, light or dark, and the theme.
 On a chart it adds **Reset zoom**, **Save chart as PNG** and **Copy chart as image** (also a button in the chart's toolbar), ready to paste into a mail, a chat or a slide.
-A click on a legend entry hides or shows that layer and a double click shows it alone, as in any chart; a right click on the legend never hides a layer, it opens the legend's menu: hide or show that layer, show it alone, show all, or **Move the legend** of this chart (right, left, below or hidden).
+A click on a legend entry hides or shows that layer and a double click shows it alone, as in any chart; a right click on the legend never hides a layer, it opens the legend's menu: hide or show that layer, show it alone, show all, its **Layer colour** (see Look), or **Move the legend** of this chart (right, left, below or hidden).
 Files, groups and Chipper have menus of their own.
 
 Shift + right click, or a right click in a text field or on selected text, keeps the browser's own menu.

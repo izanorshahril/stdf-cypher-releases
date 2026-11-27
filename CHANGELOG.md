@@ -2,6 +2,37 @@
 
 Each release, newest first. Downloads are on the [releases page](https://github.com/izanorshahril/stdf-cypher-releases/releases).
 
+## v0.4.8: WebView2 window, shared test columns, charts that fit (2026-11-27)
+
+### Added
+- **Desktop window on WebView2**: the app opens its own window on the WebView2 runtime that ships with Windows 10 and 11, with the app icon and the page title; closing it quits the app. File dialogs belong to the window, CSV and PNG files go to Downloads, and Help links open in the default browser. Opening another file from Explorer adds it to the open window. Without the runtime, or with `STDF_CYPHER_BROWSER` set, the app opens an Edge or Chrome `--app` window as before.
+- **64 layers and layer colours**: charts take up to 64 sites, files or groups, each with its own colour, kept apart for colour-blind readers too; a site keeps its colour on every page. Set a layer's colour from the legend menu or by right-clicking a mark, grey out all but one layer, or keep several layers' colours.
+- **Panels**: side panels dock left, right or at the bottom, resize, and minimise to their title; a minimised side is a strip that opens with a click. Layouts are kept per page. Site Map's layout settings and values are such panels now.
+- **Test tables share their columns**: every table of tests offers the same columns in the same order, the test's facts (**Test order**, Test #, name, units, limits), then the page's own, then what the selected parts did (N, Mean, Sigma, Min, Max, Median, Cpk, Fails, Fail %, HBin, SBin, **Alarms**, **Instr. alarms**), following the page's filter. Tables about another run, file or part offer the facts only.
+- **Test order**: 1 for the first test the file runs, then 2, and so on, whatever the test numbers; sort by it to read the flow, or filter it (`<100`).
+- **Alarm columns**: **Alarms** counts the parts whose result carried the tester's alarm flag, **Instr. alarms** the instrument alarm records in the datalog that name the test. They show by default when the file has alarms.
+- **Reorder columns**: drag a column header sideways, drag a column's grip in **Columns** (or Alt+Up / Alt+Down there), or use **Move left** / **Move right** in the header's right-click menu. The order is kept per table.
+- **Chart height**: on Test Explorer, Compare, Abnormal Test and Overview the charts size so their first two rows fit the window, and size again with the window or a panel. Drag the bottom edge of any chart to resize every chart of the page at once (kept per page); double-click the edge to fit them again.
+- **Abnormal Test** (experimental): the tests where one part reads off from the other parts, even in a file of a few parts, or where one site reads off from the other sites. Its table names the **Odd part ID**, **Its site** and the **Odd site**; its charts cross marked parts, and a right-click on a point or a ringed part marks it for every other page.
+- Every table has CSV and Copy, resizable columns and a header menu to highlight cells by a rule, fit the width, move or hide a column.
+
+### Changed
+- A column the rows leave empty hides while it is empty (**Columns** marks it *(empty)*) and shows again when rows fill it.
+- Number filters hint `> < =`, site columns `=7`.
+- A chart legend of more than twelve layers moves beside the plot and scrolls, so it no longer covers the chart's title.
+- Tables of tests that had no **Columns** menu have one.
+
+### Fixed
+- The static HTML report stopped drawing its tables with a script error in 0.4.8-preview.2.
+- Abnormal Test reported an infinite sigma for a part far off the others, and flagged too many tests on files of a few parts.
+- Custom CSV exports now save the columns shown.
+
+### Known gaps
+- Not yet checked inside the desktop window: dragging a column or a chart edge, and the colour picker.
+- A colour change redraws every chart of the page: about 2 s with 64 layers.
+- Site Map cell labels are cramped at 64 sites.
+- On a small window (for example 1080p at 125% scaling) Compare's two chart rows need a short scroll; charts are never shorter than 200 px.
+
 ## v0.4.7: Bin picks, test pareto, site tables (2026-11-25)
 
 ### Added

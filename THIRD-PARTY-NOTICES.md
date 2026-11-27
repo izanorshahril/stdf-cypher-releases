@@ -416,6 +416,41 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
+## WebView2 loader (Microsoft WebView2 SDK 1.0.3650.58)
+
+`WebView2LoaderStatic.lib` from the Microsoft.Web.WebView2 SDK, shipped in the webview2-com-sys crate and linked into the program; it finds the WebView2 runtime installed on the PC.
+Licence as published with the SDK package (`assets/LICENSE-webview2-sdk.txt`):
+
+```
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+   * Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+   * The name of Microsoft Corporation, or the names of its contributors 
+may not be used to endorse or promote products derived from this
+software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
+
 ## Rust standard library
 
 Built with rustc 1.98.0 (88d9e12ae 2026-08-18). The standard library is licensed MIT OR Apache-2.0; its Unicode tables are under Unicode-3.0 and its compiler runtime helpers under Apache-2.0 WITH LLVM-exception.
@@ -695,6 +730,8 @@ LLVM-exception.txt:
 | syn | 2.0.119 | MIT OR Apache-2.0 |
 | syn | 3.0.9 | MIT OR Apache-2.0 |
 | sync_wrapper | 1.0.2 | Apache-2.0 |
+| thiserror | 2.0.21 | MIT OR Apache-2.0 |
+| thiserror-impl | 2.0.21 | MIT OR Apache-2.0 |
 | tokio | 1.54.0 | MIT |
 | tokio-macros | 2.7.2 | MIT |
 | toml | 1.1.8+spec-1.1.0 | MIT OR Apache-2.0 |
@@ -713,11 +750,24 @@ LLVM-exception.txt:
 | utf8parse | 0.2.2 | Apache-2.0 OR MIT |
 | vswhom | 0.1.0 | MIT |
 | vswhom-sys | 0.1.3 | MIT |
+| webview2-com | 0.39.1 | MIT |
+| webview2-com-macros | 0.8.1 | MIT |
+| webview2-com-sys | 0.39.1 | MIT |
 | wide | 0.7.33 | Zlib OR Apache-2.0 OR MIT |
+| windows | 0.62.2 | MIT OR Apache-2.0 |
+| windows-collections | 0.3.2 | MIT OR Apache-2.0 |
+| windows-core | 0.62.2 | MIT OR Apache-2.0 |
+| windows-future | 0.3.2 | MIT OR Apache-2.0 |
+| windows-implement | 0.60.2 | MIT OR Apache-2.0 |
+| windows-interface | 0.59.3 | MIT OR Apache-2.0 |
 | windows-link | 0.2.1 | MIT OR Apache-2.0 |
+| windows-numerics | 0.3.1 | MIT OR Apache-2.0 |
+| windows-result | 0.4.1 | MIT OR Apache-2.0 |
+| windows-strings | 0.5.1 | MIT OR Apache-2.0 |
 | windows-sys | 0.59.0 | MIT OR Apache-2.0 |
 | windows-sys | 0.61.2 | MIT OR Apache-2.0 |
 | windows-targets | 0.52.6 | MIT OR Apache-2.0 |
+| windows-threading | 0.2.1 | MIT OR Apache-2.0 |
 | windows_x86_64_msvc | 0.52.6 | MIT OR Apache-2.0 |
 | winnow | 1.0.4 | MIT |
 | winreg | 0.56.0 | MIT |
@@ -957,7 +1007,7 @@ limitations under the License.
 
 ### Text 3
 
-Shipped by: adler2 2.0.1 (LICENSE-MIT), anyhow 1.0.104 (LICENSE-MIT), atomic-waker 1.1.2 (LICENSE-MIT), itoa 1.0.18 (LICENSE-MIT), once_cell 1.21.4 (LICENSE-MIT), paste 1.0.15 (LICENSE-MIT), pin-project-lite 0.2.17 (LICENSE-MIT), proc-macro2 1.0.107 (LICENSE-MIT), quote 1.0.47 (LICENSE-MIT), semver 1.0.28 (LICENSE-MIT), serde 1.0.229 (LICENSE-MIT), serde_core 1.0.229 (LICENSE-MIT), serde_derive 1.0.229 (LICENSE-MIT), serde_json 1.0.154 (LICENSE-MIT), serde_path_to_error 0.1.20 (LICENSE-MIT), syn 2.0.119 (LICENSE-MIT), syn 3.0.9 (LICENSE-MIT), typed-path 0.13.0 (LICENSE-MIT), unicode-ident 1.0.27 (LICENSE-MIT), zmij 1.0.23 (LICENSE-MIT).
+Shipped by: adler2 2.0.1 (LICENSE-MIT), anyhow 1.0.104 (LICENSE-MIT), atomic-waker 1.1.2 (LICENSE-MIT), itoa 1.0.18 (LICENSE-MIT), once_cell 1.21.4 (LICENSE-MIT), paste 1.0.15 (LICENSE-MIT), pin-project-lite 0.2.17 (LICENSE-MIT), proc-macro2 1.0.107 (LICENSE-MIT), quote 1.0.47 (LICENSE-MIT), semver 1.0.28 (LICENSE-MIT), serde 1.0.229 (LICENSE-MIT), serde_core 1.0.229 (LICENSE-MIT), serde_derive 1.0.229 (LICENSE-MIT), serde_json 1.0.154 (LICENSE-MIT), serde_path_to_error 0.1.20 (LICENSE-MIT), syn 2.0.119 (LICENSE-MIT), syn 3.0.9 (LICENSE-MIT), thiserror 2.0.21 (LICENSE-MIT), thiserror-impl 2.0.21 (LICENSE-MIT), typed-path 0.13.0 (LICENSE-MIT), unicode-ident 1.0.27 (LICENSE-MIT), zmij 1.0.23 (LICENSE-MIT).
 
 ```
 Permission is hereby granted, free of charge, to any
@@ -1290,7 +1340,7 @@ SOFTWARE.
 
 ### Text 9
 
-Shipped by: anyhow 1.0.104 (LICENSE-APACHE), itoa 1.0.18 (LICENSE-APACHE), libc 0.2.191 (LICENSE-APACHE), paste 1.0.15 (LICENSE-APACHE), proc-macro2 1.0.107 (LICENSE-APACHE), quote 1.0.47 (LICENSE-APACHE), ryu 1.0.23 (LICENSE-APACHE), semver 1.0.28 (LICENSE-APACHE), serde 1.0.229 (LICENSE-APACHE), serde_core 1.0.229 (LICENSE-APACHE), serde_derive 1.0.229 (LICENSE-APACHE), serde_json 1.0.154 (LICENSE-APACHE), serde_path_to_error 0.1.20 (LICENSE-APACHE), serde_urlencoded 0.7.1 (LICENSE-APACHE), syn 2.0.119 (LICENSE-APACHE), syn 3.0.9 (LICENSE-APACHE), typed-path 0.13.0 (LICENSE-APACHE), unicode-ident 1.0.27 (LICENSE-APACHE), utf8parse 0.2.2 (LICENSE-APACHE).
+Shipped by: anyhow 1.0.104 (LICENSE-APACHE), itoa 1.0.18 (LICENSE-APACHE), libc 0.2.191 (LICENSE-APACHE), paste 1.0.15 (LICENSE-APACHE), proc-macro2 1.0.107 (LICENSE-APACHE), quote 1.0.47 (LICENSE-APACHE), ryu 1.0.23 (LICENSE-APACHE), semver 1.0.28 (LICENSE-APACHE), serde 1.0.229 (LICENSE-APACHE), serde_core 1.0.229 (LICENSE-APACHE), serde_derive 1.0.229 (LICENSE-APACHE), serde_json 1.0.154 (LICENSE-APACHE), serde_path_to_error 0.1.20 (LICENSE-APACHE), serde_urlencoded 0.7.1 (LICENSE-APACHE), syn 2.0.119 (LICENSE-APACHE), syn 3.0.9 (LICENSE-APACHE), thiserror 2.0.21 (LICENSE-APACHE), thiserror-impl 2.0.21 (LICENSE-APACHE), typed-path 0.13.0 (LICENSE-APACHE), unicode-ident 1.0.27 (LICENSE-APACHE), utf8parse 0.2.2 (LICENSE-APACHE).
 
 ```
 Apache License
@@ -6783,7 +6833,7 @@ SOFTWARE.
 
 ### Text 97
 
-Shipped by: windows-link 0.2.1 (license-apache-2.0), windows-sys 0.59.0 (license-apache-2.0), windows-sys 0.61.2 (license-apache-2.0), windows-targets 0.52.6 (license-apache-2.0), windows_x86_64_msvc 0.52.6 (license-apache-2.0).
+Shipped by: windows 0.62.2 (license-apache-2.0), windows-collections 0.3.2 (license-apache-2.0), windows-core 0.62.2 (license-apache-2.0), windows-future 0.3.2 (license-apache-2.0), windows-implement 0.60.2 (license-apache-2.0), windows-interface 0.59.3 (license-apache-2.0), windows-link 0.2.1 (license-apache-2.0), windows-numerics 0.3.1 (license-apache-2.0), windows-result 0.4.1 (license-apache-2.0), windows-strings 0.5.1 (license-apache-2.0), windows-sys 0.59.0 (license-apache-2.0), windows-sys 0.61.2 (license-apache-2.0), windows-targets 0.52.6 (license-apache-2.0), windows-threading 0.2.1 (license-apache-2.0), windows_x86_64_msvc 0.52.6 (license-apache-2.0).
 
 ```
 Apache License
@@ -6991,7 +7041,7 @@ Apache License
 
 ### Text 98
 
-Shipped by: windows-link 0.2.1 (license-mit), windows-sys 0.59.0 (license-mit), windows-sys 0.61.2 (license-mit), windows-targets 0.52.6 (license-mit), windows_x86_64_msvc 0.52.6 (license-mit).
+Shipped by: windows 0.62.2 (license-mit), windows-collections 0.3.2 (license-mit), windows-core 0.62.2 (license-mit), windows-future 0.3.2 (license-mit), windows-implement 0.60.2 (license-mit), windows-interface 0.59.3 (license-mit), windows-link 0.2.1 (license-mit), windows-numerics 0.3.1 (license-mit), windows-result 0.4.1 (license-mit), windows-strings 0.5.1 (license-mit), windows-sys 0.59.0 (license-mit), windows-sys 0.61.2 (license-mit), windows-targets 0.52.6 (license-mit), windows-threading 0.2.1 (license-mit), windows_x86_64_msvc 0.52.6 (license-mit).
 
 ```
 MIT License
@@ -7393,3 +7443,10 @@ freely, subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 ```
 
+## Crates without a licence file
+
+Their licence is the one named in the table above:
+
+- webview2-com 0.39.1 (MIT)
+- webview2-com-macros 0.8.1 (MIT)
+- webview2-com-sys 0.39.1 (MIT)

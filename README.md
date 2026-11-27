@@ -16,7 +16,7 @@ The program is not signed, so Windows may show a SmartScreen warning for a downl
 Or unblock the zip before extracting it: right-click it, **Properties**, tick **Unblock**, or run `Unblock-File` on it in PowerShell.
 Each release lists the zip's SHA-256 checksum in `SHA256SUMS.txt`.
 
-Windows 10 or 11, 64-bit. The app opens in its own window using the Edge or Chrome engine already on the PC.
+Windows 10 or 11, 64-bit. The app opens in its own window on WebView2, the Edge engine that ships with Windows; without it, in an Edge or Chrome window or your default browser.
 
 ## What it does
 

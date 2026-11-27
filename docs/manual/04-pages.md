@@ -69,7 +69,7 @@ The tests on the left, the charts of one test in the middle and the statistics o
 - The Cpk column is shaded by the Cpk rule (see [Look and themes](06-look.md#shaded-cells-and-rules)); failing tests are red.
 - Four chart cards: histogram, trend, box plot and normal probability plot. Each card's type menu switches it to any of these or the CDF; **Expand** fills the middle of the page with one, so the tests and the statistics stay beside it, and it stays expanded when you pick another test.
 - Each card's settings button holds its look: bin size, 2D or 3D and depth, and % of layer on a histogram; lines on and off with their width and opacity on a chart of points; the opacity and the axis range. The bin size is the chart's own; the others apply to every chart.
-- The test list shows Test, Fail % and HBin by default; **Columns** adds Test #, Test name, N, Cpk and SBin (HBin and SBin: the bin most of the parts this test failed first went to), and **Default columns** goes back. Drag a column header's right edge to widen it (double-click to fit). **CSV** saves every test of the list with its statistics.
+- The test list shows Test, Fail % and HBin by default, and the alarm columns when the file has alarms; **Columns** adds the other common columns of a test table (see [Test tables](02-layout.md#test-tables)), and **Default columns** goes back. HBin and SBin are the bin most of the parts this test failed first went to. Drag a column header's right edge to widen it (double-click to fit). **CSV** saves every test of the list with its statistics.
 - The histogram's **%** / **Count** switch in its card header: layers of separate files compare in % of each layer, layers of one population (sites, bins…) by count, unless you switch it; Compare and the other pages that compare runs default to %.
 - **Figures** above the layers in Statistics picks what each layer shows: mean, sigma, min / max, median and Cp / Cpk by default; N can be added. A long test name is cut to fit; hover it for the whole name.
 - A filter box sits under every column. Numbers take `>1.33`, `<=5`, `!=0` or a range `1..2`; text is contained (`!text` for rows without it). Type a test number or name under Test and press Enter to open it; with no exact match, the nearest test by number or name opens and the page says so.
@@ -134,7 +134,7 @@ Rates and test values are coloured against the value over all sites, the worse s
 The places follow the file's sites: four sites are placed `1 2` over `4 3`; eight, twelve or sixteen in two rows from the middle out, sixteen as `13 9 5 1 4 8 12 16` over `14 10 6 2 3 7 11 15`; other counts in rows from left to right.
 A site between the file's sites that tested no part, such as sites 5 and 6 blocked on a 16-site run, keeps its place and is shown as blocked.
 **Layout** changes the rows, the columns and the site in each place for the open dataset; it is not saved, so the next file starts from its own sites.
-A layout of more than seven columns sits under the map; **Hide** puts the layout away for a wider map, and **Show layout** brings it back.
+The layout settings and the values are panels: dock them left, right or at the bottom, resize them, or minimise one to its title for a wider map; a click on the title opens it again.
 **By site**, under the map, lists the bins or the tests with a column for each site: the share of the site's parts in the bin or outside the test's limits, or the parts (**%** or **Parts**).
 It has a filter under each column and a Columns menu; click a bin or a test to show it on the map.
 With more than eight sites the site columns are named short: S1 to S8, or S01, S02… when a site number has two digits.
@@ -287,6 +287,25 @@ The **ID audit** finds IDs shared by different parts and placeholder values.
 One-way ANOVA (F, p, eta squared), Kruskal-Wallis and Brown-Forsythe/Levene for every test, against site, head, wafer, file, bin, X, Y, the loadboard or any test's value.
 P-values are corrected with Benjamini-Hochberg.
 Click a test for its group means and box plots.
+
+### Abnormal Test
+
+The tests where one part reads off from the other parts, or one site from the other sites, also in a file of a few parts.
+
+- **A part** is held against the other parts of its site, or of the whole file when its site has fewer parts than **Parts a site needs** (5 by default): its distance from their median, in their sigma.
+  Each part is left out of what it is measured against, so in a file of six parts the odd one does not hide itself.
+  **Part σ** is that distance made fair across file sizes: with few parts to go by it counts for less (a Student t prediction), and among many parts the largest by chance is not off (the chance is scaled by the number of parts of the test, also when each part is read against its own site, so more sites do not mean more flags).
+  Among many parts, the sigma is that of the bulk of them, so a few far parts (opens, shorts) do not widen it and hide themselves.
+  So 2.5 means about the same in a file of six as in one of thousands; plain parts flag a test about once in a hundred.
+- **A site** is held against the other sites: its median's shift from the median of the other sites' medians, in the sigma within a site; **Spread ×** shows when a site spreads more than the others.
+- A part is off past **Part off at, σ** (2.5 by default), a site past **Site off at, σ** (1.5), and both only when the gap is at least **Least gap, % of limits** (1%) of the limit range, so a tight test does not flag a wobble no one would see.
+  A test without both limits takes the gap as a % of its median, or of the spread of its values when the median is 0.
+
+**Within the limits only** (on by default) takes only the results inside the limits that apply to each part, so the page finds passing parts that read a bit off rather than the parts the tester already failed; turn it off to see every result.
+The tests list shows, for each test, the **Odd part ID** and **Its site**, and the **Odd site**; filter **Its site** with `=7` for the tests whose odd part is on site 7.
+It puts flagged tests first (**Flag**: PART, SITE or both) and shows only those at first; its filter under Flag shows them all.
+Click a test for its parts by site: two chart cards, the trend with the parts off ringed and the box plot of each site; each card's type menu shows the histogram, probability plot or CDF instead.
+Marked parts are crossed on both charts, and a right click on a point, or on a ringed part, marks it, so it is crossed on Test Explorer, Compare and the other pages too.
 
 ### Abnormal Part
 

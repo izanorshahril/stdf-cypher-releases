@@ -54,6 +54,20 @@ A picked colour is darkened or lightened until it reads on the theme's backgroun
 
 The eight series colours as a set (theme, neon, pastel, colour-blind safe, accent shades, greys) or one by one, and the pass, fail, warning and limit colours.
 Every chart follows, also charts already on screen.
+Charts draw up to 64 layers (sites, bins, files), each in a colour of its own: the eight set here first, then 56 worked out from them, at an even lightness that stays readable on the theme's background.
+A grey set (the Noir theme, the Greys colours) has fewer distinct greys than that, so some repeat.
+Sites 1 to 64 keep their colour whatever a filter leaves: site 12 is always the twelfth colour.
+More than 64 groups show the 63 largest and one "Other".
+
+### Layer colours
+
+Right-click a legend entry, or a point, bar or box of a layer, and open **Layer colour**:
+
+- **Colour of** the layer: pick any colour; that layer keeps it in every chart of every page until it is set back (**back to its own colour**, or **Clear the colours set for layers**).
+- **One colour for all but** the layer: every other layer of this page's charts turns grey, so one site stands out among 32 or 64.
+  Then, on another layer, **Keep its colour too** to bring out several, **Colour of the others** to pick the shared colour instead of grey, and **Every layer in its own colour** to end it.
+
+Layer colours are kept with the chart settings, so they survive a restart.
 
 ### Gradients
 
